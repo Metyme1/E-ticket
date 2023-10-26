@@ -1,6 +1,9 @@
 import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/customButton.dart';
+import 'cinemaSummary.dart';
+
 class CinemaSeatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class CinemaSeatPage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: platte.lightOrange,
+                  color: Colors.orange,
                   borderRadius: BorderRadius.vertical(
                     top: Radius.elliptical(200, 20),
                     bottom: Radius.elliptical(200, -30),
@@ -104,7 +107,7 @@ class CinemaSeatPage extends StatelessWidget {
               ),
               Container(
                 width: 500,
-                height: 300,
+                height: 200,
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
                   borderRadius: BorderRadius.only(
@@ -120,7 +123,7 @@ class CinemaSeatPage extends StatelessWidget {
                       padding: const EdgeInsets.only(left:15),
                       child: Row(
                         children: [
-                          Icon(Icons.location_on,color: platte.lightOrange,),
+                          Icon(Icons.location_on),
                           Text("CINEMA 1",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
                         ],
                       ),
@@ -151,17 +154,50 @@ class CinemaSeatPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Text(
-                      "Total Price",
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        color: platte.lightOrange,
-                        fontSize: 16,
+                SizedBox(height: 10,),
+                Padding(
+                  padding: const EdgeInsets.only(left:15),
+                  child: Row(
+                    children: [Text("Totla Price",style: TextStyle(fontSize:16 ),)],
+                  ),
+                ),
+                    Padding(
+                      padding: const EdgeInsets.only(left:15),
+                      child: Row(
+                        children: [Text("ETB 1000",style: TextStyle(fontSize:28,color: Colors.orange ),)],
                       ),
                     )
+
                   ],
+
                 ),
-              )
+
+              ),
+              Positioned(
+
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomButton(
+                        text: 'Order Summary',
+                        onPressed: () {
+// Navigate to the payment page
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  cinemaSummary()),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

@@ -66,7 +66,7 @@ class TransportationPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BusPage()),
+                  MaterialPageRoute(builder: (context) =>BusBookingPage()),
                 );
               },
               icon: Icon(Icons.directions_bus),

@@ -1,26 +1,7 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
-import 'cinemaPayment.dart';
-
-class CinemaSeatPage extends StatefulWidget {
-  const CinemaSeatPage({Key? key}) : super(key: key);
-
-  @override
-  _CinemaSeatPageState createState() => _CinemaSeatPageState();
-}
-
-class _CinemaSeatPageState extends State<CinemaSeatPage> {
-  List<List<bool>> seatStatus = [
-    [true, true, false, true], // Row 1
-    [true, false, true, true], // Row 2
-    [true, true, true, false], // Row 3
-    [false, true, true, true], // Row 4
-    [true, true, true, true, true], // Row 5
-    [true, true, true, false, true], // Row 6
-    [true, true, true, true, true], // Row 7
-    [true, false, true, true, true], // Row 8
-  ];
-
+class CinemaSeatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,107 +18,154 @@ class _CinemaSeatPageState extends State<CinemaSeatPage> {
         ),
         title: Center(
           child: Text(
-            'Cinema Seat',
+            'Choose Seat',
             style: TextStyle(
               color: Colors.black,
             ),
           ),
         ),
       ),
+
+
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
-            children: List.generate(
-              seatStatus.length,
-                  (row) {
-                return buildSeatRow(row);
-              },
-            ),
-          ),
-        ),
-      ),
-      floatingActionButton: Positioned(
-        left: 0,
-        right: 0,
-        bottom: 0,
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+
             children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.orange, // Set the background color
-                  minimumSize: Size(360, 50), // Set the width and height
+              Container(
+                width: double.infinity,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: platte.lightOrange,
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.elliptical(200, 20),
+                    bottom: Radius.elliptical(200, -30),
+                  ),
                 ),
-                onPressed: () {
-                  // Navigate to the payment page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => cinemaPayment()),
-                  );
-                },
-                child: Text('Select Seat'),
+                child: Center(
+                  child: Text(
+                    'Cinema Screen',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
+              SizedBox(height: 70,),
+              Row(
+                children: [
+                  Icon(Icons.rectangle,color: Colors.black,),
+                  SizedBox(width: 10,),
+                  Text("Avaliable"),
+                  SizedBox(width: 20,),
+                  Icon(Icons.rectangle,color: Colors.grey[200],),
+                  SizedBox(width: 10,),
+                  Text("Unavaliable"),
+                  SizedBox(width: 20,),
+                  Icon(Icons.rectangle,color: Colors.orangeAccent,),
+                  SizedBox(width: 10,),
+                  Text("Selected")
+                ],
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 11,
+                    crossAxisSpacing: 5.0,
+                    mainAxisSpacing: 5.0,
+                  ),
+                  itemBuilder: (context, index) {
+                    if (index == 3 ||
+                        index == 14 ||
+                        index == 25 ||
+                        index == 36 ||
+                        index == 47 ||
+                        index == 58 ||
+                        index == 69 ||
+                        index == 80) {
+                      return SizedBox(width: 20);
+                    } else {
+
+                      final effectiveIndex = index > 3 ? index - 1 : index;
+                      return Container(
+                        height: 40,
+                        width: 40,
+                        color: Colors.grey,
+
+                      );
+                    }
+                  },
+                  itemCount: 88,
+                ),
+              ),
+              Container(
+                width: 500,
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+
+                  children: [
+                    SizedBox(height: 20,),
+                    Padding(
+                      padding: const EdgeInsets.only(left:15),
+                      child: Row(
+                        children: [
+                          Icon(Icons.location_on,color: platte.lightOrange,),
+                          Text("CINEMA 1",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20,),
+                    Padding(
+                      padding: const EdgeInsets.only(left:15),
+                      child: Row(
+                        children: [
+                          Text("Date",style: TextStyle(color: Colors.black),),
+                          SizedBox(width: 100,),
+                          Text("Hour",style: TextStyle(color: Colors.black),),
+                          SizedBox(width: 100,),
+                          Text("Seats",style: TextStyle(color: Colors.black),)
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    Padding(
+                      padding: const EdgeInsets.only(left:15),
+                      child: Row(
+                        children: [
+                          Text("20 Nov",style: TextStyle(color: Colors.black,fontSize: 24),),
+                          SizedBox(width: 30,),
+                          Text("15:05",style: TextStyle(color: Colors.black,fontSize: 24),),
+                          SizedBox(width: 50,),
+                          Text("G10,G11",style: TextStyle(color: Colors.black,fontSize: 24),)
+                        ],
+                      ),
+                    ),
+                    Text(
+                      "Total Price",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        color: platte.lightOrange,
+                        fontSize: 16,
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
       ),
     );
   }
-
-  Widget buildSeatRow(int row) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(
-          seatStatus[row].length,
-              (column) {
-            final seatStatusValue = seatStatus[row][column];
-            final seatColor = seatStatusValue ? Colors.black : Colors.grey[200];
-            final seatText = seatStatusValue ? 'H${row + 1}-${column + 1}' : 'Unavailable';
-            final isSeatSelected = seatStatusValue ? false : true;
-            final seatSelectedColor = Colors.orange;
-
-            return GestureDetector(
-              onTap: seatStatusValue
-                  ? () {
-                setState(() {
-                  seatStatus[row][column] = !seatStatus[row][column];
-                });
-              }
-                  : null,
-              child: Container(
-                width: 40.0,
-                height: 40.0,
-                margin: EdgeInsets.all(4.0),
-                decoration: BoxDecoration(
-                  color: isSeatSelected ? seatSelectedColor : seatColor,
-                  borderRadius: BorderRadius.circular(4.0),
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1.0,
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    seatText,
-                    style: TextStyle(
-                      color: isSeatSelected ? Colors.white : Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
-                    ),
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
 }
-

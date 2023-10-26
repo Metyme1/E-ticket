@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/appBar.dart';
@@ -14,6 +15,13 @@ class _DiscoverPageState extends State<DiscoverPage> {
     'cinema',
     'football',
     'travel',
+  ];
+  List<IconData> iconList = [
+    Icons.group,
+    Icons.music_note,
+    Icons.movie,
+    Icons.sports_soccer,
+    Icons.airplanemode_active,
   ];
   Map<String, List<String>> categoryImages = {
     'conference': [
@@ -35,8 +43,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
       'assets/image4.png'
     ],
     'travel':[
-      'assets/travel.jpeg',
-      'assets/travel.jpeg',
+      'assets/travel.jpg',
+      'assets/travel.jpg',
 
     ]
   };
@@ -107,20 +115,27 @@ class _DiscoverPageState extends State<DiscoverPage> {
                     },
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8.0),
-                      padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                       decoration: BoxDecoration(
-                        color: isSelected ? Color.fromRGBO(255, 150, 120, 1.0) : Colors.blueGrey,
+                        color: isSelected ? platte.lightOrange : platte.darkBlue,
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                       child: Center(
-                        child: Text(
-                          category,
-                          style: TextStyle(
-                            color: isSelected ? Colors.white : Colors.black,
-                            fontWeight:
-                            isSelected ? FontWeight.bold : FontWeight.normal,
-                          ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              iconList[index], // Use the respective icon from the iconList
+                              color: isSelected ? Colors.black : Colors.white,
+                            ),
+                            SizedBox(width: 8.0),
+                            Text(
+                              category,
+                              style: TextStyle(
+                                color: isSelected ? Colors.black : Colors.white,
+                                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -146,42 +161,45 @@ class _DiscoverPageState extends State<DiscoverPage> {
               ],
             ),
           ),
-          SizedBox(height: 30,),
+         // SizedBox(height: 30,),
           Expanded(
-            child: ListView.separated(
-              itemCount: categoryImages[selectedCategory]?.length ?? 0,
-              separatorBuilder: (context, index) => SizedBox(height: 10.0),
-              itemBuilder: (context, index) {
-                final assetImagePath = categoryImages[selectedCategory]?[index];
-                return GestureDetector(
-                  onTap: () {
-                    // Define the navigation logic based on the selected image
-                    if (selectedCategory == 'conference') {
-                      Navigator.pushNamed(context, '/conference');
-                    } else if (selectedCategory == 'cinema') {
-                      Navigator.pushNamed(context, '/cinema');
-                    } else if (selectedCategory == 'football') {
-                      Navigator.pushNamed(context, '/football');
-                    }
-                    else if (selectedCategory == 'travel') {
-                      Navigator.pushNamed(context, '/travel');
-                    }
-                    else if (selectedCategory == 'concert') {
-                      Navigator.pushNamed(context, '/concert');
-                    }
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 200.0,
-                    child: assetImagePath != null
-                        ? Image.asset(
-                      assetImagePath,
-                      fit: BoxFit.fill,
-                    )
-                        : Container(),
-                  ),
-                );
-              },
+            child: Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: ListView.separated(
+                itemCount: categoryImages[selectedCategory]?.length ?? 0,
+                separatorBuilder: (context, index) => SizedBox(height: 10.0),
+                itemBuilder: (context, index) {
+                  final assetImagePath = categoryImages[selectedCategory]?[index];
+                  return GestureDetector(
+                    onTap: () {
+                      // Define the navigation logic based on the selected image
+                      if (selectedCategory == 'conference') {
+                        Navigator.pushNamed(context, '/conference');
+                      } else if (selectedCategory == 'cinema') {
+                        Navigator.pushNamed(context, '/cinema');
+                      } else if (selectedCategory == 'football') {
+                        Navigator.pushNamed(context, '/football');
+                      }
+                      else if (selectedCategory == 'travel') {
+                        Navigator.pushNamed(context, '/travel');
+                      }
+                      else if (selectedCategory == 'concert') {
+                        Navigator.pushNamed(context, '/concert');
+                      }
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 200.0,
+                      child: assetImagePath != null
+                          ? Image.asset(
+                        assetImagePath,
+                        fit: BoxFit.fill,
+                      )
+                          : Container(),
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ],

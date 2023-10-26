@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../widget/BusCard.dart';
+import '../../widget/buscard.dart';
 import '../../widget/customButton.dart';
 import 'TravelPayment.dart';
 
@@ -156,21 +155,21 @@ class BusBookingPage extends StatelessWidget {
                                               ),
                                             ),
                                             SizedBox(height: 16),
-                                            BusCard(
+                                            BusCard (
                                               busName: 'Selam Bus',
                                               seatAvailability: '13',
                                               date: 'Date 1',
                                               price: '1200 ETB',
                                             ),
                                             SizedBox(height: 20,),
-                                            BusCard(
+                                            BusCard (
                                               busName: 'Selam Bus',
                                               seatAvailability: '14',
                                               date: 'Date 2',
                                               price: '1200 ETB',
                                             ),
                                             SizedBox(height: 20,),
-                                            BusCard(
+                                            BusCard (
                                               busName: 'Selam Bus',
                                               seatAvailability: '15',
                                               date: 'Date 3',

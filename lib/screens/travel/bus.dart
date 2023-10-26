@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widget/BusCard.dart';
 import '../../widget/customButton.dart';
+import 'TravelPayment.dart';
 
 class BusBookingPage extends StatelessWidget {
   @override
@@ -188,7 +189,7 @@ class BusBookingPage extends StatelessWidget {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.grey,
+                          color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
@@ -295,9 +296,23 @@ class BusBookingPage extends StatelessWidget {
             }),
           ),
         ),
-                
+
 
               ],
+            ),
+            SizedBox(height: 15,),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              child: CustomButton(
+                text: 'proceed Payment',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  TravelPayment()),
+                  );
+
+                },
+              ),
             ),
       ]
     ),

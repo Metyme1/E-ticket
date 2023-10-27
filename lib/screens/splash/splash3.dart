@@ -14,7 +14,7 @@ class SplashScreen3 extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/image11.png',
-                  width: 200, // Adjust the width as needed
+                  width: 300, // Adjust the width as needed
                 ),
                 SizedBox(height: 20),
                 Text(
@@ -47,7 +47,7 @@ class SplashScreen3 extends StatelessWidget {
                 child: Text('Skip'),
               ),
 
-              SizedBox(width: 20),
+              SizedBox(width: 60),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -80,7 +80,7 @@ class SplashScreen3 extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(width: 20),
+              SizedBox(width: 60),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/login');

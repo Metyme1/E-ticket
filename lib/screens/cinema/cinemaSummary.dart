@@ -1,10 +1,10 @@
 
 
+import 'package:eticket2/screens/cinema/cinemaTicket.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/customButton.dart';
 import '../conference/conferenceTicket.dart';
-import 'cinemaTicket.dart';
 
 
 class cinemaSummary extends StatelessWidget {
@@ -48,7 +48,29 @@ class cinemaSummary extends StatelessWidget {
                       width: 100,
                       child: Image.asset('assets/image12.png')),
                 ),
-                Text('concert1\n Dubai Concert \n Wednesday , 20 nov 2019 15.05')
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'The Creator',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(text: '\n\n\n'),
+                      TextSpan(
+                        text: 'Cinema1 Gastmall',
+                      ),
+                      TextSpan(text: '\n\n'),
+                      TextSpan(
+                        text: 'Wednesday, 20 Nov 2019 15:05',
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
 
               ],
             ),
@@ -59,16 +81,16 @@ class cinemaSummary extends StatelessWidget {
                 )),
             Text("11988047894562442",
               style: TextStyle(
-                  fontSize: 23
+                  fontSize: 18
               ),),
             SizedBox(height: 15,),
             Text("Seat",
                 style:TextStyle(
                     color: Colors.grey
                 )),
-            Text("G3,G4",
+            Text("Regular Seat",
               style: TextStyle(
-                  fontSize: 23
+                  fontSize: 18
               ),),
             SizedBox(height: 15,),
             Text("Payment Method",
@@ -77,53 +99,26 @@ class cinemaSummary extends StatelessWidget {
                 )),
             Text("Chappa",
               style: TextStyle(
-                  fontSize: 23
+                  fontSize: 18
               ),),
             SizedBox(height: 15,),
             Text("Regular Seat",
                 style:TextStyle(
                     color: Colors.grey
                 )),
-            Row(
-              children: [
-                Text(
-                  '500ETB',
-                  style: TextStyle(
-                    fontSize: 18,
-
-
-                  ),
-                ),
-                Text("*2",
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey
-                  ),),
-              ],
-            ),
-
+            Text("ETB 500",
+              style: TextStyle(
+                  fontSize: 18
+              ),),
             SizedBox(height: 15,),
             Text("Convience Fee",
                 style:TextStyle(
                     color: Colors.grey
                 )),
-            Row(
-              children: [
-                Text(
-                  '50ETB',
-                  style: TextStyle(
-                    fontSize: 18,
-
-
-                  ),
-                ),
-                Text("*2",
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey
-                  ),),
-              ],
-            ),
+            Text("ETB 50",
+              style: TextStyle(
+                  fontSize: 18
+              ),),
             SizedBox(height: 15,),
             DividerTheme(
               data: DividerThemeData(
@@ -140,11 +135,13 @@ class cinemaSummary extends StatelessWidget {
                 style:TextStyle(
                     color: Colors.grey
                 )),
-            Text("ETB 1100",
+            Text("ETB 500",
               style: TextStyle(
-                  fontSize: 29,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold
               ),),
+            SizedBox(height: 100,),
+
             Positioned(
 
               left: 0,

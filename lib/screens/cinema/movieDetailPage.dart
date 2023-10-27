@@ -13,8 +13,8 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
   List<String> avaliable = [
 
     "15:05 12 seats Availiable",
-    "15:05\n 12 seats Availiable",
-    "15:05\n 12 seats Availiable",
+    "15:05 12 seats Availiable",
+    "15:05 12 seats Availiable",
     // Add more movie titles as needed
   ];
   @override
@@ -22,8 +22,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
     return Scaffold(
 
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -34,15 +33,83 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                     fit: BoxFit.cover,
                   ),
                   Container(
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(26.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 80,),
+                        Text(
+                          'The Creator',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.orange,
+                              size: 15,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              '8.9/10 from IMDb',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {
+                                  // Execute your action for the "Horror" button
+                                },
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20), // Adjust the value to change the roundness
+                                  ),
+                                ),
+                              ),
+                                child: Text(
+                                  'Horror',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
 
-                    child: Text(
-                      'The Creator',
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                            SizedBox(width: 16),
+                             ElevatedButton(
+                                onPressed: () {
+                                  // Execute your action for the "Drama" button
+                                },
+                               style: ButtonStyle(
+                                 backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                   RoundedRectangleBorder(
+                                     borderRadius: BorderRadius.circular(20), // Adjust the value to change the roundness
+                                   ),
+                                 ),
+                               ),
+                                child: Text(
+                                  'Drama',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -179,7 +246,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                         width: 80.0,
                         margin: EdgeInsets.symmetric(horizontal: 8.0),
                         decoration: BoxDecoration(
-                          color: index == selectedIndex ? Colors.orange: Colors.grey[200],
+                          color: index == selectedIndex ? Colors.orange: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
                           border: Border.all(
                             color: Colors.black38,
@@ -200,31 +267,40 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                   },
                 ),
               ),
-              SizedBox(height: 15,),
-              Text("Select Seat",
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 15,
-              ),),
-              DropdownButton<String>(
-                value: selectedCinema,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedCinema = newValue!;
-                  });
-                },
-                items: <String>['Cinema 1', 'Cinema 2', 'Cinema 3']
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text("Select Seat",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,
+                ),),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: DropdownButton<String>(
+                  value: selectedCinema,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedCinema = newValue!;
+                    });
+                  },
+                  items: <String>['Cinema 1', 'Cinema 2', 'Cinema 3']
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
               ),
 
               Row(
                 children: [
-                  Text("GOLD 2D"),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text("GOLD 2D"),
+                  ),
                 SizedBox(width: 240,),
                 Text("ETB 500")
                 ],
@@ -247,7 +323,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                         width: 120.0,
                         margin: EdgeInsets.symmetric(horizontal: 8.0),
                         decoration: BoxDecoration(
-                          color: index == selected2Index ? Colors.orange: Colors.grey[200],
+                          color: index == selected2Index ? Colors.orange: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
                           border: Border.all(
                             color: Colors.black38,
@@ -298,7 +374,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
               ),
             ],
           ),
-        ),
+
       ),
     );
   }

@@ -68,44 +68,56 @@ class TaxiPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16.0),
+            Row(
+              children: [
+                Icon(Icons.location_on),
+                Text(
+                  'Miniliam Hall',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+              ],
+            ),
+
             Text(
-              'Pick-up location',
+              'Addis Abeba',
               style: TextStyle(
                 fontSize: 12.0,
                 color: Colors.grey,
               ),
             ),
-            Text(
-              'Miniliam Hall',
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.black,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            SizedBox(height: 20,),
+
             Divider(
               color: Colors.orange,
-              thickness: 1.0,
+              thickness: 2.0,
+            ),
+
+            Row(
+              children: [
+                Icon(Icons.location_on),
+                Text(
+                  'Gurde Shola',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+              ],
             ),
             Text(
-              'Drop-off location',
+              'S1',
               style: TextStyle(
                 fontSize: 12.0,
                 color: Colors.grey,
               ),
             ),
-            Text(
-              'Gurde Shola',
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             Divider(
               color: Colors.orange,
-              thickness: 1.0,
+              thickness: 2.0,
             ),
 
           ],

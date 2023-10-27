@@ -40,7 +40,7 @@ class CinemaSeatPage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Colors.orange,
+                  color: platte.lightOrange,
                   borderRadius: BorderRadius.vertical(
                     top: Radius.elliptical(200, 20),
                     bottom: Radius.elliptical(200, -30),

@@ -47,7 +47,29 @@ class concertSummary extends StatelessWidget {
                       width: 100,
                       child: Image.asset('assets/image5.png')),
                 ),
-                Text('concert1\n Dubai Concert \n Wednesday , 20 nov 2019 15.05')
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'concert1',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(text: '\n\n\n'),
+                      TextSpan(
+                        text: 'Dubai Concert',
+                      ),
+                      TextSpan(text: '\n\n'),
+                      TextSpan(
+                        text: 'Wednesday, 20 Nov 2019 15:05',
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
 
               ],
             ),
@@ -58,7 +80,7 @@ class concertSummary extends StatelessWidget {
             )),
             Text("11988047894562442",
             style: TextStyle(
-              fontSize: 23
+              fontSize: 18
             ),),
             SizedBox(height: 15,),
             Text("Seat",
@@ -67,7 +89,7 @@ class concertSummary extends StatelessWidget {
                 )),
             Text("Regular Seat",
               style: TextStyle(
-                  fontSize: 23
+                  fontSize: 18
               ),),
             SizedBox(height: 15,),
             Text("Payment Method",
@@ -76,7 +98,7 @@ class concertSummary extends StatelessWidget {
                 )),
             Text("Chappa",
               style: TextStyle(
-                  fontSize: 23
+                  fontSize: 18
               ),),
             SizedBox(height: 15,),
             Text("Regular Seat",
@@ -85,7 +107,7 @@ class concertSummary extends StatelessWidget {
                 )),
             Text("ETB 500",
               style: TextStyle(
-                  fontSize: 23
+                  fontSize: 18
               ),),
             SizedBox(height: 15,),
             Text("Convience Fee",
@@ -94,7 +116,7 @@ class concertSummary extends StatelessWidget {
                 )),
             Text("ETB 50",
               style: TextStyle(
-                  fontSize: 23
+                  fontSize: 18
               ),),
             SizedBox(height: 15,),
             DividerTheme(
@@ -114,9 +136,10 @@ class concertSummary extends StatelessWidget {
                 )),
             Text("ETB 500",
               style: TextStyle(
-                  fontSize: 29,
+                  fontSize: 25,
                 fontWeight: FontWeight.bold
               ),),
+            SizedBox(height: 100,),
 
             Positioned(
 

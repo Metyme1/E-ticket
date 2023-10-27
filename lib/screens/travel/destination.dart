@@ -35,6 +35,7 @@ class DestinationPage extends StatelessWidget {
 
         child: Column(
           children: [
+            SizedBox(height: 100,),
             Container(
               padding: EdgeInsets.all(16.0),
               child: Column(
@@ -46,7 +47,7 @@ class DestinationPage extends StatelessWidget {
                         Icons.location_on,
                         color: Colors.grey,
                       ),
-                      SizedBox(width: 8.0),
+                      SizedBox(width: 20),
                       Expanded(
                         child: Container(
                           height: 30.0,
@@ -78,7 +79,7 @@ class DestinationPage extends StatelessWidget {
                         Icons.location_on,
                         color: Colors.orange,
                       ),
-                      SizedBox(width: 8.0),
+                      SizedBox(width: 20),
                       Expanded(
                         child: Container(
                           height: 30.0,
@@ -98,7 +99,11 @@ class DestinationPage extends StatelessWidget {
                 ],
               ),
             ),
-
+            Divider(
+              color: Colors.grey,
+              height: 16.0,
+              thickness: 2.0,
+            ),
 
             Container(
               padding: EdgeInsets.all(16.0),
@@ -107,12 +112,12 @@ class DestinationPage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.location_on),
+                      Icon(Icons.location_on,color: Colors.orangeAccent,),
                       SizedBox(width: 8.0),
                       Text('Minilium hall',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18
+                        fontSize: 15
                       ),),
                     ],
                   ),
@@ -135,12 +140,12 @@ class DestinationPage extends StatelessWidget {
                   SizedBox(height: 10,),
                   Row(
                     children: [
-                      Icon(Icons.location_on),
+                      Icon(Icons.location_on,color: Colors.orangeAccent,),
                       SizedBox(width: 8.0),
                       Text('Minilium hall',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 18
+                            fontSize: 15
                         ),),
                     ],
                   ),
@@ -163,12 +168,12 @@ class DestinationPage extends StatelessWidget {
                   SizedBox(height: 10,),
                   Row(
                     children: [
-                      Icon(Icons.location_on),
+                      Icon(Icons.location_on,color: Colors.orangeAccent,),
                       SizedBox(width: 8.0),
                       Text('Minilium hall',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 18
+                            fontSize: 15
                         ),),
                     ],
                   ),
@@ -191,12 +196,12 @@ class DestinationPage extends StatelessWidget {
                   SizedBox(height: 10,),
                   Row(
                     children: [
-                      Icon(Icons.location_on),
+                      Icon(Icons.location_on,color: Colors.orangeAccent,),
                       SizedBox(width: 8.0),
                       Text('Minilium hall',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 18
+                            fontSize: 15
                         ),),
                     ],
                   ),
@@ -210,18 +215,21 @@ class DestinationPage extends StatelessWidget {
                         ),),
                     ],
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.orange,
+                  SizedBox(height: 40,),
+                  Center(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.orange,
+                      ),
+                      onPressed: () {
+                        // Route to the provider ride page
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => RideProviderPage()),
+                        );
+                      },
+                      child: Text('Choose Ride Provider'),
                     ),
-                    onPressed: () {
-                      // Route to the provider ride page
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => RideProviderPage()),
-                      );
-                    },
-                    child: Text('Choose Ride Provider'),
                   ),
                 ],
               ),

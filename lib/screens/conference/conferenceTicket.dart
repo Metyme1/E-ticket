@@ -106,7 +106,7 @@ class MyTicketPage extends StatelessWidget {
                               ),
 
 
-                             
+
 
                               Image.asset(
                                 'assets/image7.png', // Replace with the actual image path

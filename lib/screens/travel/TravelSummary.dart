@@ -52,7 +52,7 @@ class TravelSummary extends StatelessWidget {
                   )),
               Text("11988047894562442",
                 style: TextStyle(
-                    fontSize: 23
+                    fontSize: 18
                 ),),
               SizedBox(height: 15,),
               Text("Seat",
@@ -61,7 +61,7 @@ class TravelSummary extends StatelessWidget {
                   )),
               Text("B2,D2,D3",
                 style: TextStyle(
-                    fontSize: 23
+                    fontSize: 18
                 ),),
               SizedBox(height: 15,),
               Text("Payment Method",
@@ -70,7 +70,7 @@ class TravelSummary extends StatelessWidget {
                   )),
               Text("Chappa",
                 style: TextStyle(
-                    fontSize: 23
+                    fontSize: 18
                 ),),
               SizedBox(height: 15,),
               Text("Regular Seat",

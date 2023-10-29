@@ -25,26 +25,28 @@ class _DiscoverPageState extends State<DiscoverPage> {
   ];
   Map<String, List<String>> categoryImages = {
     'conference': [
-      'assets/conference.jpeg',
-      'assets/conference.jpeg',
+      'assets/c.jpg',
+      'assets/c.jpg',
 
     ],
     'concert': [
-      'assets/image5.png',
-      'assets/image5.png',
+      'assets/con.png',
+      'assets/con.png',
 
     ],
    'cinema':[
-     'assets/image3.png',
-     'assets/image3.png',
+     'assets/M1.png',
+     'assets/M2.png',
+     'assets/M1.png',
    ],
     'football':[
-      'assets/image4.png',
-      'assets/image4.png'
+      'assets/c.jpg',
+      'assets/con.png',
     ],
     'travel':[
-      'assets/travel.jpg',
-      'assets/travel.jpg',
+      'assets/M1.png',
+      'assets/con.png',
+
 
     ]
   };

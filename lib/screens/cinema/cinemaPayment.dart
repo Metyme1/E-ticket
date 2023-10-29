@@ -8,50 +8,76 @@ import '../../widget/paymentcard.dart';
 class cinemaPayment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
           backgroundColor: Colors.white,
-          elevation: 0,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            color: Colors.black,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          title: Center(
-            child: Text(
-              'Payment Page',
-              style: TextStyle(
-                color: Colors.black,
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              color: Colors.black,
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            title: Center(
+              child: Text(
+                'Payment Page',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
               ),
             ),
           ),
-        ),
 
-        body: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+          body: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
-                SizedBox(height: 16),
-                Row(
-                  children: [
+                  SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Text(
+                        'Regular Seat:',
+                        style: TextStyle(
+                          fontSize: 15,
+
+                        ),
+                      ),
+                      SizedBox(width: 170,),
+                      Text(
+                        '500ETB',
+                        style: TextStyle(
+                          fontSize: 18,
+
+
+                        ),
+                      ),
+                      Text("*2",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey
+                        ),),
+                    ],
+                  ),
+
+                  SizedBox(height: 16),
+                  Row(children: [
                     Text(
-                      'Regular Seat:',
+                      'Convenience Fee:',
                       style: TextStyle(
                         fontSize: 15,
 
                       ),
                     ),
-                    SizedBox(width: 170,),
+                    SizedBox(width: 140,),
                     Text(
-                      '500ETB',
+                      '50ETB',
                       style: TextStyle(
                         fontSize: 18,
-
 
                       ),
                     ),
@@ -60,111 +86,87 @@ class cinemaPayment extends StatelessWidget {
                           fontSize: 12,
                           color: Colors.grey
                       ),),
-                  ],
-                ),
-
-                SizedBox(height: 16),
-                Row(children: [
-                  Text(
-                    'Convenience Fee:',
-                    style: TextStyle(
-                      fontSize: 15,
-
+                  ],),
+                  DividerTheme(
+                    data: DividerThemeData(
+                      thickness: 1, // Increase thickness for a bolder line
+                    ),
+                    child: Container(
+                      height: 30, // Increase height to increase the space taken by the Divider
+                      child: Divider(
+                        color: Colors.black,
+                      ),
                     ),
                   ),
-                  SizedBox(width: 140,),
+                  SizedBox(height: 16),
+                  Row(children: [
+                    Text(
+                      'Actual Pay',
+                      style: TextStyle(
+                        fontSize: 14,
+
+                      ),
+                    ),
+                    SizedBox(width: 190,),
+                    Text(
+                      '1100Etb',
+                      style: TextStyle(
+                        fontSize: 18,
+
+                      ),
+                    ),
+                  ],),
+                  SizedBox(height: 16),
                   Text(
-                    '50ETB',
+                    'Payment Method',
                     style: TextStyle(
                       fontSize: 18,
-
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text("*2",
-                    style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey
-                    ),),
-                ],),
-                DividerTheme(
-                  data: DividerThemeData(
-                    thickness: 1, // Increase thickness for a bolder line
+                  SizedBox(height:30),
+                  GridView.count(
+                    crossAxisCount: 3,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      PaymentCard(image: 'assets/image13.png'),
+                      PaymentCard(image: 'assets/image19.png'),
+                      PaymentCard(image: 'assets/image20.png'),
+                      PaymentCard(image: 'assets/image18.png'),
+                      PaymentCard(image: 'assets/image18.png'),
+                      PaymentCard(image: 'assets/image20.png'),
+                    ],
                   ),
-                  child: Container(
-                    height: 30, // Increase height to increase the space taken by the Divider
-                    child: Divider(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 16),
-                Row(children: [
-                  Text(
-                    'Actual Pay',
-                    style: TextStyle(
-                      fontSize: 14,
+                  Positioned(
 
-                    ),
-                  ),
-                  SizedBox(width: 190,),
-                  Text(
-                    '1100Etb',
-                    style: TextStyle(
-                      fontSize: 18,
-
-                    ),
-                  ),
-                ],),
-                SizedBox(height: 16),
-                Text(
-                  'Payment Method',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height:30),
-                GridView.count(
-                  crossAxisCount: 3,
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    PaymentCard(image: 'assets/image13.png'),
-                    PaymentCard(image: 'assets/image19.png'),
-                    PaymentCard(image: 'assets/image20.png'),
-                    PaymentCard(image: 'assets/image18.png'),
-                    PaymentCard(image: 'assets/image18.png'),
-                    PaymentCard(image: 'assets/image20.png'),
-                  ],
-                ),
-                Positioned(
-
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    color: Colors.white,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomButton(
-                          text: 'Order Summary',
-                          onPressed: () {
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      color: Colors.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomButton(
+                            text: 'Order Summary',
+                            onPressed: () {
 // Navigate to the payment page
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>  cinemaSummary()),
-                            );
-                          },
-                        ),
-                      ],
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  cinemaSummary()),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ]
-          ),
-        )
+                ]
+            ),
+          )
+      ),
     );
   }
 }

@@ -13,91 +13,93 @@ class _RideProviderPageState extends State<RideProviderPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: AnimatedContainer(
-              duration: Duration(milliseconds: 200),
-              height: _containerHeight,
-              child: Image.asset(
-                'assets/map.jpeg',
-                fit: BoxFit.cover,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            Expanded(
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 200),
+                height: _containerHeight,
+                child: Image.asset(
+                  'assets/map.jpeg',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: DraggableScrollableSheet(
-              initialChildSize: 0.3,
-              minChildSize: 0.3,
-              maxChildSize: 1,
-              builder: (BuildContext context, ScrollController scrollController) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(16.0),
-                      topRight: Radius.circular(16.0),
+            Expanded(
+              child: DraggableScrollableSheet(
+                initialChildSize: 0.3,
+                minChildSize: 0.3,
+                maxChildSize: 1,
+                builder: (BuildContext context, ScrollController scrollController) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16.0),
+                        topRight: Radius.circular(16.0),
+                      ),
                     ),
-                  ),
-                  child: Scrollbar(
-                    thickness: 8.0,
-                    radius: Radius.circular(4.0),
-                    child: ListView(
-                      controller: scrollController,
-                      padding: EdgeInsets.all(16.0),
-                      children: [
-                        RideProviderItem(
-                          providerName: 'Feres',
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => RidePage()),
-                            );
-                          },
-                          imagePath: 'assets/ride.png', availableSeats: 11,
-                        ),
-                        SizedBox(height: 10,),
-                        RideProviderItem(
-                          providerName: 'Feres',
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => RidePage()),
-                            );
-                          },
-                          imagePath: 'assets/feres.png', availableSeats: 8,
-                        ),
-                        SizedBox(height: 10,),
-                        RideProviderItem(
-                          providerName: 'Zay Ride',
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => RidePage()),
-                            );
-                          },
-                          imagePath: 'assets/zayride.jpeg', availableSeats: 10,
-                        ),
-                        SizedBox(height: 10,),
-                        RideProviderItem(
-                          providerName: 'Taxiye',
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => RidePage()),
-                            );
-                          },
-                          imagePath: 'assets/taxiye.png', availableSeats: 12,
-                        ),
-                      ],
+                    child: Scrollbar(
+                      thickness: 8.0,
+                      radius: Radius.circular(4.0),
+                      child: ListView(
+                        controller: scrollController,
+                        padding: EdgeInsets.all(16.0),
+                        children: [
+                          RideProviderItem(
+                            providerName: 'Feres',
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => RidePage()),
+                              );
+                            },
+                            imagePath: 'assets/ride.png', availableSeats: 11,
+                          ),
+                          SizedBox(height: 10,),
+                          RideProviderItem(
+                            providerName: 'Feres',
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => RidePage()),
+                              );
+                            },
+                            imagePath: 'assets/feres.png', availableSeats: 8,
+                          ),
+                          SizedBox(height: 10,),
+                          RideProviderItem(
+                            providerName: 'Zay Ride',
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => RidePage()),
+                              );
+                            },
+                            imagePath: 'assets/zayride.jpeg', availableSeats: 10,
+                          ),
+                          SizedBox(height: 10,),
+                          RideProviderItem(
+                            providerName: 'Taxiye',
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => RidePage()),
+                              );
+                            },
+                            imagePath: 'assets/taxiye.png', availableSeats: 12,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

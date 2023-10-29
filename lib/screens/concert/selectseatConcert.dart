@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widget/NavBar.dart';
 import '../../widget/roundedButton.dart';
-import '../conference/conferenceTicket.dart';
+import 'package:eticket2/config/platte.dart';
 import 'concertPayment.dart';
 
 class selectseatConcert extends StatefulWidget {
@@ -36,7 +36,7 @@ class _selectseatConcertState extends State<selectseatConcert> {
             ),
             Container(
               height: 350,
-              color: Color.fromRGBO(255, 210, 128, 1.0),
+              color: platte.orange,
               padding: EdgeInsets.all(16),
               child: Column(
                 children: [

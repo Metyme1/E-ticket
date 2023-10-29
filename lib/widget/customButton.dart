@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eticket2/config/platte.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -14,7 +15,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: Colors.orange, // Customize the button color
+        primary: platte.orange, // Customize the button color
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10), // Customize the border radius
         ),

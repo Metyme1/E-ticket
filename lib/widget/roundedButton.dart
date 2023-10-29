@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatefulWidget {
@@ -26,7 +27,7 @@ class _RoundedButtonState extends State<RoundedButton> {
         height: 50,
         width: 300,
         decoration: BoxDecoration(
-          color: widget.isSelected ? Colors.orange : Colors.white,
+          color: widget.isSelected ? platte.orange : Colors.white,
           borderRadius: BorderRadius.circular(25),
         ),
         child: Row(

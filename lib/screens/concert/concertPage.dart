@@ -1,6 +1,6 @@
 import 'package:eticket2/screens/concert/selectseatConcert.dart';
 import 'package:flutter/material.dart';
-
+import 'package:eticket2/config/platte.dart';
 import '../../widget/NavBar.dart';
 import '../conference/conferenceTicket.dart';
 
@@ -23,7 +23,7 @@ class ConcertPage extends StatelessWidget {
             ),
             Container(
               height: 350,
-              color: Color.fromRGBO(255, 210, 128, 1.0),
+              color: platte.orange,
               padding: EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,25 +60,32 @@ class ConcertPage extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
+
                   Expanded(
                     child: Align(
                       alignment: Alignment.bottomRight,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          onPrimary: Colors.black,
+                      child: Container(
+                        width: 150, // Adjust the width according to your needs
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white,
+                            onPrimary: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10), // Adjust the border radius as desired
+                            ),
+                          ),
+                          child: Text(
+                            'Buy Tickets',
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          onPressed: () {
+                            // Navigate to ticket page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => selectseatConcert()),
+                            );
+                          },
                         ),
-                        child: Text(
-                          'Buy Tickets',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        onPressed: () {
-                          // Navigate to ticket page
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => selectseatConcert()),
-                          );
-                        },
                       ),
                     ),
                   ),

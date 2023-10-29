@@ -9,6 +9,8 @@ class platte extends StatelessWidget {
   static const Color lightGreen = Color.fromRGBO(144, 238, 144, 1.0);
   static const Color yellow = Color(0xFFFDE1C7);
    static const Color black = Color(0xFF2D2B2E);
+  static const  orange = Color(0xFFDC9A5D);
+
 
   @override
   Widget build(BuildContext context) {

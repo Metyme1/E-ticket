@@ -1,7 +1,6 @@
-
+import 'package:eticket2/config/platte.dart';
 import 'package:eticket2/widget/seatcard.dart';
 import 'package:flutter/material.dart';
-
 import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
 import '../../widget/paymentcard.dart';
@@ -42,11 +41,11 @@ class PaymentPage extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    width: 200,
-                    height: 50,
+                    width: 350,
+                    height: 40,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(5),
                     ),
                     child: ElevatedButton(
                       onPressed: () {
@@ -127,15 +126,19 @@ class PaymentPage extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        primary: Colors.grey[100],
                         elevation: 0,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                         padding: EdgeInsets.zero,
                       ),
                       child: Ink(
                         decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            color: platte.orange,
+                            width: 2.0,
+                          ),
                         ),
                         child: Container(
                           alignment: Alignment.center,
@@ -143,7 +146,7 @@ class PaymentPage extends StatelessWidget {
                             'Select Seat Type',
                             style: TextStyle(
                               fontSize: 18,
-                              color: Colors.white,
+                              color: Colors.grey,
                             ),
                           ),
                         ),

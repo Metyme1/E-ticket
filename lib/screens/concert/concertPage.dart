@@ -1,6 +1,7 @@
 import 'package:eticket2/screens/concert/selectseatConcert.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../conference/conferenceTicket.dart';
 
 class ConcertPage extends StatelessWidget {
@@ -86,6 +87,12 @@ class ConcertPage extends StatelessWidget {
             ),
                 ],
               ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
 
       ),
     );

@@ -1,9 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-
+import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
-import '../conference/conferenceTicket.dart';
 import 'concertTicket.dart';
 
 class concertSummary extends StatelessWidget {
@@ -140,7 +139,7 @@ class concertSummary extends StatelessWidget {
                     fontSize: 25,
                   fontWeight: FontWeight.bold
                 ),),
-              SizedBox(height: 100,),
+              SizedBox(height: 60,),
 
               Positioned(
 
@@ -170,7 +169,12 @@ class concertSummary extends StatelessWidget {
             ],
           ),
         ),
-
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

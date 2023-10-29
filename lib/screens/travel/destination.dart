@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import 'RideProvider.dart';
 
 class DestinationPage extends StatelessWidget {
@@ -237,6 +238,12 @@ class DestinationPage extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

@@ -2,6 +2,7 @@
 import 'package:eticket2/widget/seatcard.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
 import '../../widget/paymentcard.dart';
 import 'conferenceTicket.dart';
@@ -269,8 +270,15 @@ class PaymentPage extends StatelessWidget {
               ),
             ]
           ),
-        )
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
+
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
+
 
 class concertTicket extends StatelessWidget {
   @override
@@ -140,7 +142,13 @@ class concertTicket extends StatelessWidget {
                   ),
                 ]
             ),
-          )
+          ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

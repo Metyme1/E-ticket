@@ -1,4 +1,5 @@
 
+import 'package:eticket2/screens/DiscoverPage.dart';
 import 'package:eticket2/screens/cinema/CinemaPage.dart';
 import 'package:eticket2/screens/football/FootballPage.dart';
 import 'package:eticket2/screens/travel/TravelPage.dart';
@@ -35,6 +36,8 @@ class MyApp extends StatelessWidget {
         '/football': (context) => FootballPage(),
         '/concert': (context) => ConcertPage(),
         '/travel': (context) => TransportationPage(),
+        '/discover': (context)=>DiscoverPage(),
+
 
       },
     );

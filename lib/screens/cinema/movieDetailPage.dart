@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widget/NavBar.dart';
 import 'cinemaSeat.dart';
 class MovieDetailPage extends StatefulWidget {
 
@@ -376,6 +377,13 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
               ],
             ),
 
+        ),
+
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

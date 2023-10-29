@@ -3,6 +3,7 @@
 import 'package:eticket2/screens/concert/concertTicket.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
 import '../../widget/paymentcard.dart';
 import '../conference/conferenceTicket.dart';
@@ -158,7 +159,13 @@ class concertPayment extends StatelessWidget {
                   ),
                 ]
             ),
-          )
+          ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

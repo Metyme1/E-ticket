@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
+
 class FootballPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,6 +11,12 @@ class FootballPage extends StatelessWidget {
       ),
       body: Center(
         child: Text('Football Page Content'),
+      ),
+      bottomNavigationBar: CustomNavigationBar(
+        destinations: destinations,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
       ),
     );
   }

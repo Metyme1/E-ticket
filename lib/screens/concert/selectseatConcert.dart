@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/roundedButton.dart';
 import '../conference/conferenceTicket.dart';
 import 'concertPayment.dart';
@@ -116,6 +117,12 @@ class _selectseatConcertState extends State<selectseatConcert> {
               ),
             ),
           ],
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

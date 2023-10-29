@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widget/NavBar.dart';
 import '../../widget/buscard.dart';
 import '../../widget/customButton.dart';
 import 'TravelPayment.dart';
@@ -316,7 +317,13 @@ class BusBookingPage extends StatelessWidget {
               ),
         ]
       ),
-      )
+      ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
+
 
 class cinemaTicket extends StatelessWidget {
   @override
@@ -132,7 +134,13 @@ class cinemaTicket extends StatelessWidget {
                   ),
                 ]
             ),
-          )
+          ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

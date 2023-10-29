@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
 import '../cinema/cinemaTicket.dart';
 import '../conference/conferenceTicket.dart';
@@ -168,7 +169,12 @@ class TravelSummary extends StatelessWidget {
             ),
           ),
         ),
-
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

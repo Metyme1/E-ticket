@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import 'destination.dart';
 class TaxiPage extends StatelessWidget {
   @override
@@ -28,7 +29,7 @@ class TaxiPage extends StatelessWidget {
               SizedBox(height: 20,),
               Image.asset(
                 'assets/map.jpeg', // Replace with your image asset path
-                height: 500.0, // Set the desired height
+                height: 450.0, // Set the desired height
                 fit: BoxFit.cover,
               ),
               SizedBox(height: 16.0),
@@ -123,6 +124,12 @@ class TaxiPage extends StatelessWidget {
 
             ],
           ),
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

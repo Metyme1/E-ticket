@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/appBar.dart';
 import 'movieDetailPage.dart';
 
@@ -61,7 +62,7 @@ class _CinemaPageState extends State<CinemaPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 80.0),
+              padding: const EdgeInsets.only(top: 20.0),
 
             ),
             Expanded(
@@ -134,7 +135,7 @@ class _CinemaPageState extends State<CinemaPage> {
                               ],
 
                             ),
-                       SizedBox(height: 30,),
+                       SizedBox(height: 20,),
                             GestureDetector(
                               onTap: () {
 
@@ -207,6 +208,12 @@ class _CinemaPageState extends State<CinemaPage> {
 
 
           ],
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

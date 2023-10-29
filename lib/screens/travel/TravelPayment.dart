@@ -1,6 +1,7 @@
 import 'package:eticket2/screens/cinema/cinemaSummary.dart';
 import 'package:eticket2/screens/travel/TravelSummary.dart';
 import 'package:flutter/material.dart';
+import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
 import '../../widget/paymentcard.dart';
 
@@ -166,7 +167,13 @@ class TravelPayment extends StatelessWidget {
                   ),
                 ]
             ),
-          )
+          ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

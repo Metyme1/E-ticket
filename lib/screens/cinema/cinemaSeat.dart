@@ -1,6 +1,7 @@
 import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
 import 'cinemaSummary.dart';
 
@@ -202,6 +203,12 @@ class CinemaSeatPage extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

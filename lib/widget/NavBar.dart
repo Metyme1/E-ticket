@@ -1,53 +1,95 @@
+
 import 'package:flutter/material.dart';
 
-class NavigationBar extends StatelessWidget {
+class CustomNavigationDestination {
+  final IconData icon;
+  final String label;
+
+  CustomNavigationDestination({required this.icon, required this.label});
+}
+
+class CustomNavigationBar extends StatefulWidget {
+  final List<CustomNavigationDestination> destinations;
+  final Color backgroundColor;
+  final Color selectedItemColor;
+  final Color unselectedItemColor;
+
+  CustomNavigationBar({
+    required this.destinations,
+    required this.backgroundColor,
+    required this.selectedItemColor,
+    required this.unselectedItemColor,
+  });
+
+  @override
+  _CustomNavigationBarState createState() => _CustomNavigationBarState();
+}
+
+class _CustomNavigationBarState extends State<CustomNavigationBar> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // Handle navigation based on the selected index
+    // ...
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.explore),
-          label: 'Explore',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.event),
-          label: 'Events',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.directions_bus),
-          label: 'Transportation',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.confirmation_number),
-          label: 'Tickets',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          label: 'Settings',
-        ),
-      ],
-      selectedItemColor: Colors.blue,
-      unselectedItemColor: Colors.grey,
-      onTap: (index) {
-        // Handle navigation to different routes based on the index
-        switch (index) {
-          case 0: // Explore
-            Navigator.pushNamed(context, '/explore');
-            break;
-          case 1: // Events
-            Navigator.pushNamed(context, '/events');
-            break;
-          case 2: // Transportation
-            Navigator.pushNamed(context, '/transportation');
-            break;
-          case 3: // Tickets
-            Navigator.pushNamed(context, '/tickets');
-            break;
-          case 4: // Settings
-            Navigator.pushNamed(context, '/settings');
-            break;
-        }
-      },
+    return Container(
+      color: widget.backgroundColor,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: widget.destinations.map((destination) {
+          bool isSelected = widget.destinations.indexOf(destination) == _selectedIndex;
+          return GestureDetector(
+            onTap: () => _onItemTapped(widget.destinations.indexOf(destination)),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  destination.icon,
+                  color: isSelected ? widget.selectedItemColor : widget.unselectedItemColor,
+                ),
+                Text(
+                  destination.label,
+                  style: TextStyle(
+                    color: isSelected ? widget.selectedItemColor : widget.unselectedItemColor,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }).toList(),
+      ),
     );
   }
 }
+
+  List<CustomNavigationDestination> destinations = [
+    CustomNavigationDestination(
+      icon: Icons.explore,
+      label: 'Explore',
+    ),
+    CustomNavigationDestination(
+      icon: Icons.event,
+      label: 'Events',
+    ),
+    CustomNavigationDestination(
+      icon: Icons.directions_bus,
+      label: 'Transport',
+    ),
+    CustomNavigationDestination(
+      icon: Icons.confirmation_number,
+      label: 'Tickets',
+    ),
+    CustomNavigationDestination(
+      icon: Icons.settings,
+      label: 'Settings',
+    ),
+  ];
+
+

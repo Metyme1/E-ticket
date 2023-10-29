@@ -3,6 +3,7 @@
 import 'package:eticket2/screens/cinema/cinemaTicket.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
 import '../conference/conferenceTicket.dart';
 
@@ -141,7 +142,7 @@ class cinemaSummary extends StatelessWidget {
                     fontSize: 25,
                     fontWeight: FontWeight.bold
                 ),),
-              SizedBox(height: 100,),
+              SizedBox(height: 60,),
 
               Positioned(
 
@@ -171,7 +172,12 @@ class cinemaSummary extends StatelessWidget {
             ],
           ),
         ),
-
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
       ),
     );
   }

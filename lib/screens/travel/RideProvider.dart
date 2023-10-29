@@ -1,6 +1,7 @@
 import 'package:eticket2/screens/travel/ride.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/RideProviderWidget.dart';
 
 class RideProviderPage extends StatefulWidget {
@@ -99,6 +100,12 @@ class _RideProviderPageState extends State<RideProviderPage> {
               ),
             ),
           ],
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

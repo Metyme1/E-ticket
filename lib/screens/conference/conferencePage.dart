@@ -1,6 +1,7 @@
 import 'package:eticket2/screens/conference/conferencePayment.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/NavBar.dart';
 import '../../widget/appBar.dart';
 import '../../widget/customButton.dart';
 
@@ -117,6 +118,12 @@ class ConferencePage extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

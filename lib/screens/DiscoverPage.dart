@@ -1,6 +1,7 @@
 import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
+import '../widget/NavBar.dart';
 import '../widget/appBar.dart';
 
 class DiscoverPage extends StatefulWidget {
@@ -208,8 +209,13 @@ class _DiscoverPageState extends State<DiscoverPage> {
           ],
 
         ),
-
-      ),
+        bottomNavigationBar: CustomNavigationBar(
+          destinations: destinations,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+        ),
+      )
     );
   }
 }

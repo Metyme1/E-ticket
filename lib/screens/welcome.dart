@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -5,7 +6,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF8A95D6),
+        backgroundColor:platte.darkblue,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -32,12 +33,12 @@ class WelcomePage extends StatelessWidget {
                       'Get Started',
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                     Icon(
                       Icons.arrow_circle_right_rounded,
-                      color: Colors.black,
+                      color: platte.yellow,
                     ),
                   ],
                 ),

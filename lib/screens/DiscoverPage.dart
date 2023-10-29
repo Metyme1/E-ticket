@@ -121,7 +121,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                         margin: EdgeInsets.symmetric(horizontal: 8.0),
                         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                         decoration: BoxDecoration(
-                          color: isSelected ? platte.lightOrange : platte.darkBlue,
+                          color: isSelected ? platte.lightOrange : platte.darkblue,
                           borderRadius: BorderRadius.circular(5.0),
                         ),
                         child: Center(

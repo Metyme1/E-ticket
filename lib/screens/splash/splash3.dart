@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eticket2/config/platte.dart';
 
 class SplashScreen3 extends StatelessWidget {
   @override
@@ -45,7 +46,7 @@ class SplashScreen3 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/login');
                   },
-                  child: Text('Skip'),
+                  child: Text('Skip',style: TextStyle(color: Colors.grey),),
                 ),
 
                 SizedBox(width: 60),
@@ -86,7 +87,7 @@ class SplashScreen3 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/login');
                   },
-                  child: Text('Next'),
+                  child: Text('Next',style: TextStyle(color: platte.black),),
                 ),
               ],
             ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:eticket2/config/platte.dart';
 import 'DiscoverPage.dart';
 
 
@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0),
                                 ),
-                                primary: Colors.black,
+                                primary: platte.darkblue
                               ),
                               child: Text(
                                 'Login',

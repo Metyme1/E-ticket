@@ -17,7 +17,7 @@ class BusBookingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top:20.0,left: 10),
+                padding: const EdgeInsets.only(top:10.0,left: 10),
                 child: Row(
                   children: [
                     Icon(
@@ -52,7 +52,7 @@ class BusBookingPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 6.0),
               Padding(
                 padding: EdgeInsets.only(left: 30,right: 20,),
                 child: Row(
@@ -77,7 +77,7 @@ class BusBookingPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 6.0),
               Padding(
                 padding: EdgeInsets.only(left: 30,right: 20,),
                 child:Row(
@@ -226,7 +226,7 @@ class BusBookingPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
               Row(
                 children: [
 
@@ -302,17 +302,19 @@ class BusBookingPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 15,),
-              Container(
-                padding: EdgeInsets.all(16.0),
-                child: CustomButton(
-                  text: 'proceed Payment',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>  TravelPayment()),
-                    );
+              Center(
+                child: Container(
+                  padding: EdgeInsets.all(16.0),
+                  child: CustomButton(
+                    text: 'proceed Payment',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  TravelPayment()),
+                      );
 
-                  },
+                    },
+                  ),
                 ),
               ),
         ]

@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Column(
                         children: [
                           Container(
-                            width: 300,
+                            width: 400,
                             height: 50, // Adjust the width value as needed
                             child: ElevatedButton(
                               onPressed: () {

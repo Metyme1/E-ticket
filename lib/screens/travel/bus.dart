@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 import '../../widget/NavBar.dart';
 import '../../widget/buscard.dart';
@@ -260,7 +261,7 @@ class BusBookingPage extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 10.0),
                         child: Row(
                           children: [
-                            Icon(Icons.rectangle,size: 30,color: Colors.orange,),
+                            Icon(Icons.rectangle,size: 30,color: platte.orange,),
 
                             Text(" seats you selected")
                           ],
@@ -283,7 +284,7 @@ class BusBookingPage extends StatelessWidget {
               children: List.generate(28, (index) {
                 Color squareColor;
                 if (index % 3 == 0) {
-                  squareColor = Colors.orange; // Orange color for some squares
+                  squareColor = platte.orange; // Orange color for some squares
                 } else if (index % 3 == 1) {
                   squareColor = Colors.black; // Black color for some squares
                 } else {

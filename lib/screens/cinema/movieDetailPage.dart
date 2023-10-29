@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 import '../../widget/NavBar.dart';
 import 'cinemaSeat.dart';
@@ -248,7 +249,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                           width: 80.0,
                           margin: EdgeInsets.symmetric(horizontal: 8.0),
                           decoration: BoxDecoration(
-                            color: index == selectedIndex ? Colors.orange: Colors.white,
+                            color: index == selectedIndex ? platte.orange: Colors.white,
                             borderRadius: BorderRadius.circular(8.0),
                             border: Border.all(
                               color: Colors.black38,
@@ -325,7 +326,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                           width: 120.0,
                           margin: EdgeInsets.symmetric(horizontal: 8.0),
                           decoration: BoxDecoration(
-                            color: index == selected2Index ? Colors.orange: Colors.white,
+                            color: index == selected2Index ? platte.orange: Colors.white,
                             borderRadius: BorderRadius.circular(8.0),
                             border: Border.all(
                               color: Colors.black38,
@@ -358,7 +359,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                       children: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:  Colors.orange, // Set the background color
+                            primary:  platte.orange, // Set the background color
                             minimumSize: Size(360, 50), // Set the width and height
                           ),
                           onPressed: () {

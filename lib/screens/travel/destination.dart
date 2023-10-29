@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/NavBar.dart';
@@ -79,7 +80,7 @@ class DestinationPage extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.location_on,
-                          color: Colors.orange,
+                          color: platte.orange,
                         ),
                         SizedBox(width: 20),
                         Expanded(
@@ -114,7 +115,7 @@ class DestinationPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.location_on,color: Colors.orangeAccent,),
+                        Icon(Icons.location_on,color: platte.orange,),
                         SizedBox(width: 8.0),
                         Text('Minilium hall',
                         style: TextStyle(
@@ -135,14 +136,14 @@ class DestinationPage extends StatelessWidget {
                     ),
                     SizedBox(height: 10,),
                     Divider(
-                      color: Colors.orange,
+                      color: platte.orange,
                       height: 16.0,
                       thickness: 2.0,
                     ),
                     SizedBox(height: 10,),
                     Row(
                       children: [
-                        Icon(Icons.location_on,color: Colors.orangeAccent,),
+                        Icon(Icons.location_on,color: platte.orange),
                         SizedBox(width: 8.0),
                         Text('Minilium hall',
                           style: TextStyle(
@@ -163,14 +164,14 @@ class DestinationPage extends StatelessWidget {
                     ),
                     SizedBox(height: 10,),
                     Divider(
-                      color: Colors.orange,
+                      color: platte.orange,
                       height: 16.0,
                       thickness: 2.0,
                     ),
                     SizedBox(height: 10,),
                     Row(
                       children: [
-                        Icon(Icons.location_on,color: Colors.orangeAccent,),
+                        Icon(Icons.location_on,color: platte.orange,),
                         SizedBox(width: 8.0),
                         Text('Minilium hall',
                           style: TextStyle(
@@ -191,14 +192,14 @@ class DestinationPage extends StatelessWidget {
                     ),
                     SizedBox(height: 10,),
                     Divider(
-                      color: Colors.orange,
+                      color: platte.orange,
                       height: 16.0,
                       thickness: 2.0,
                     ),
                     SizedBox(height: 10,),
                     Row(
                       children: [
-                        Icon(Icons.location_on,color: Colors.orangeAccent,),
+                        Icon(Icons.location_on,color:platte.orange,),
                         SizedBox(width: 8.0),
                         Text('Minilium hall',
                           style: TextStyle(
@@ -221,7 +222,7 @@ class DestinationPage extends StatelessWidget {
                     Center(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
+                          primary: platte.orange,
                         ),
                         onPressed: () {
                           // Route to the provider ride page

@@ -31,7 +31,7 @@ class TransportationPage extends StatelessWidget {
               Text(
                 'Available Options',
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),

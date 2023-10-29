@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/NavBar.dart';
@@ -21,7 +22,7 @@ class TaxiPage extends StatelessWidget {
                   Icon(
                     Icons.emoji_transportation,
                     size: 48.0,
-                    color: Colors.orange,// Set the desired size
+                    color: platte.orange,// Set the desired size
                   ),
                   Text("taxi")
                 ],
@@ -29,7 +30,7 @@ class TaxiPage extends StatelessWidget {
               SizedBox(height: 20,),
               Image.asset(
                 'assets/map.jpeg', // Replace with your image asset path
-                height: 450.0, // Set the desired height
+                height: 400.0, // Set the desired height
                 fit: BoxFit.cover,
               ),
               SizedBox(height: 16.0),
@@ -43,7 +44,7 @@ class TaxiPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
                   padding: EdgeInsets.all(12.0),
                   child: Center(
@@ -61,7 +62,7 @@ class TaxiPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 24.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.orange,
+                            color:platte.orange,
                           ),
                         ),
                       ],
@@ -93,7 +94,7 @@ class TaxiPage extends StatelessWidget {
               ),
 
               Divider(
-                color: Colors.orange,
+                color: platte.orange,
                 thickness: 2.0,
               ),
 
@@ -118,7 +119,7 @@ class TaxiPage extends StatelessWidget {
                 ),
               ),
               Divider(
-                color: Colors.orange,
+                color: platte.orange,
                 thickness: 2.0,
               ),
 

@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/NavBar.dart';
@@ -20,7 +21,7 @@ class RidePage extends StatelessWidget {
                   Icon(
                     Icons.emoji_transportation,
                     size: 48.0, // Set
-                    color: Colors.orange,// the desired size
+                    color: platte.orange,// the desired size
                   ),
                   Text("Taxi")
                 ],
@@ -65,7 +66,7 @@ class RidePage extends StatelessWidget {
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
-                       Icon(Icons.price_change_rounded,size: 40,color: Colors.orange,),
+                       Icon(Icons.price_change_rounded,size: 40,color: platte.orange,),
                        SizedBox(width: 30,),
                        Text("ETB 290 [Estimated]")
                      ],
@@ -73,7 +74,7 @@ class RidePage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon( Icons.directions , size: 40,color: Colors.orange,),
+                        Icon( Icons.directions , size: 40,color: platte.orange),
                         SizedBox(width: 130,),
                         Text("5.6 km")
                       ],
@@ -81,7 +82,7 @@ class RidePage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.play_arrow_outlined,size: 40,color: Colors.orange,),
+                        Icon(Icons.play_arrow_outlined,size: 40,color: platte.orange),
                         SizedBox(width: 130,),
                         Text("Hotel")
                       ],

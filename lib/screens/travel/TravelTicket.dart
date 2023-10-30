@@ -47,7 +47,7 @@ class TravelTicket extends StatelessWidget {
                                Row(
                                  children: [
                                    Text("Addis Abeba"),
-                                   SizedBox(width: 150,),
+                                   SizedBox(width: 130,),
                                    Text("Hawassa")
                                  ],
                                ),

@@ -211,7 +211,7 @@ class BusBookingPage extends StatelessWidget {
                   ],
                 )
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 5,),
               Row(
                 children: [
                   Text("Passengers"),
@@ -227,7 +227,7 @@ class BusBookingPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 5,),
               Row(
                 children: [
 
@@ -245,7 +245,7 @@ class BusBookingPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 5,),
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
                         child: Row(
@@ -273,7 +273,7 @@ class BusBookingPage extends StatelessWidget {
                   ),
                   SizedBox(width: 10,),
           Container(
-            height: 300, // Replace with your desired height
+            height: 280, // Replace with your desired height
             width: 200, // Replace with your desired width
             color: Colors.grey[200], // Replace with your desired container color
             child: GridView.count(
@@ -302,7 +302,7 @@ class BusBookingPage extends StatelessWidget {
 
                 ],
               ),
-              SizedBox(height: 15,),
+              SizedBox(height: 10,),
               Center(
                 child: Container(
                   padding: EdgeInsets.all(16.0),

@@ -2,6 +2,7 @@ import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/NavBar.dart';
+import '../../widget/customButton.dart';
 import 'RideProvider.dart';
 
 class DestinationPage extends StatelessWidget {
@@ -220,10 +221,8 @@ class DestinationPage extends StatelessWidget {
                     ),
                     SizedBox(height: 40,),
                     Center(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: platte.orange,
-                        ),
+                      child: CustomButton(
+                        text: 'Choose Ride Provider',
                         onPressed: () {
                           // Route to the provider ride page
                           Navigator.push(
@@ -231,7 +230,6 @@ class DestinationPage extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => RideProviderPage()),
                           );
                         },
-                        child: Text('Choose Ride Provider'),
                       ),
                     ),
                   ],

@@ -11,11 +11,11 @@ class DiscoverPage extends StatefulWidget {
 
 class _DiscoverPageState extends State<DiscoverPage> {
   List<String> categories = [
-    'conference',
-    'concert',
-    'cinema',
-    'football',
-    'travel',
+    'Conference',
+    'Concert',
+    'Cinema',
+    'Stadium',
+    'Travel',
   ];
   List<IconData> iconList = [
     Icons.group,
@@ -25,26 +25,28 @@ class _DiscoverPageState extends State<DiscoverPage> {
     Icons.airplanemode_active,
   ];
   Map<String, List<String>> categoryImages = {
-    'conference': [
+    'Conference': [
       'assets/c.jpg',
       'assets/c.jpg',
 
     ],
-    'concert': [
+    'Concert': [
       'assets/con.png',
       'assets/con.png',
 
     ],
-   'cinema':[
+   'Cinema':[
      'assets/M1.png',
      'assets/M2.png',
      'assets/M1.png',
    ],
-    'football':[
-      'assets/c.jpg',
-      'assets/con.png',
+    'Stadium':[
+      'assets/image4.png',
+      'assets/image4.png',
+      'assets/image4.png',
+      'assets/image4.png',
     ],
-    'travel':[
+    'Travel':[
       'assets/M1.png',
       'assets/con.png',
 
@@ -177,17 +179,17 @@ class _DiscoverPageState extends State<DiscoverPage> {
                     return GestureDetector(
                       onTap: () {
                         // Define the navigation logic based on the selected image
-                        if (selectedCategory == 'conference') {
+                        if (selectedCategory == 'Conference') {
                           Navigator.pushNamed(context, '/conference');
-                        } else if (selectedCategory == 'cinema') {
+                        } else if (selectedCategory == 'Cinema') {
                           Navigator.pushNamed(context, '/cinema');
-                        } else if (selectedCategory == 'football') {
+                        } else if (selectedCategory == 'Stadium') {
                           Navigator.pushNamed(context, '/football');
                         }
-                        else if (selectedCategory == 'travel') {
+                        else if (selectedCategory == 'Travel') {
                           Navigator.pushNamed(context, '/travel');
                         }
-                        else if (selectedCategory == 'concert') {
+                        else if (selectedCategory == 'Concert') {
                           Navigator.pushNamed(context, '/concert');
                         }
                       },

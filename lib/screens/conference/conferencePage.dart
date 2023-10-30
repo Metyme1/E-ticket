@@ -52,7 +52,7 @@ class ConferencePage extends StatelessWidget {
                 SizedBox(height: 40),
                 Container(
                   width: 350,
-                  height: 400,
+                  height: 390,
                   padding: EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
                     color: Colors.white,

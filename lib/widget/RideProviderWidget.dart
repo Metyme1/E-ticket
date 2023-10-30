@@ -40,7 +40,7 @@ class RideProviderItem extends StatelessWidget {
                   'Available Seats: $availableSeats',
                   style: TextStyle(fontSize: 12.0, color: Colors.grey[700]),
                 ),
-                SizedBox(width: 140,),
+                SizedBox(width:120,),
                 Icon(Icons.arrow_forward_ios_sharp)
               ],
             ),

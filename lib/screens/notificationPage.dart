@@ -33,7 +33,7 @@ class notificationPage extends StatelessWidget {
           Icon(Icons.circle,
           color: Colors.red
             ,),
-          Text("Your Password is sucessfully chnaged",
+          Text("Your Password is sucessfully changed",
           style: TextStyle(
             color: Colors.black,
 

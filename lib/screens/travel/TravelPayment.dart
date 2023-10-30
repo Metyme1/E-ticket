@@ -140,28 +140,29 @@ class TravelPayment extends StatelessWidget {
                       PaymentCard(image: 'assets/image20.png'),
                     ],
                   ),
-                  Positioned(
-
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      color: Colors.white,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CustomButton(
-                            text: 'Order Summary',
-                            onPressed: () {
-// Navigate to the payment page
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) =>  TravelSummary()),
-                              );
-                            },
+                  Container(
+                    child: Expanded(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          color: Colors.white,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomButton(
+                                text: 'Order Summary',
+                                onPressed: () {
+                                  // Navigate to the payment page
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => TravelSummary()),
+                                  );
+                                },
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),

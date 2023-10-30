@@ -18,10 +18,7 @@ class PaymentCard extends StatelessWidget {
             height: 50,
           ),
           SizedBox(height: 8),
-          Text(
-            'Payment Method',
-            textAlign: TextAlign.center,
-          ),
+
         ],
       ),
     );

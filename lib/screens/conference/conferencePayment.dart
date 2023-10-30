@@ -238,7 +238,15 @@ class PaymentPage extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  PaymentCard(image: 'assets/image13.png'),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: platte.orange, width: 2.0),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: PaymentCard(
+                      image: 'assets/download.png',
+                    ),
+                  ),
                   PaymentCard(image: 'assets/image19.png'),
                   PaymentCard(image: 'assets/image20.png'),
                   PaymentCard(image: 'assets/image18.png'),

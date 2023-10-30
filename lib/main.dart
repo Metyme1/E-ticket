@@ -2,7 +2,7 @@
 import 'package:eticket2/screens/DiscoverPage.dart';
 import 'package:eticket2/screens/cinema/CinemaPage.dart';
 
-import 'package:eticket2/screens/stadium/FootballPage.dart';
+import 'package:eticket2/screens/stadium/stadiumPage.dart';
 import 'package:eticket2/screens/travel/TravelPage.dart';
 import 'package:eticket2/screens/concert/concertPage.dart';
 import 'package:eticket2/screens/conference/conferencePage.dart';

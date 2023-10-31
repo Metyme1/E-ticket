@@ -38,26 +38,17 @@ class CinemaSeatPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
-
               children: [
-
-
-                Container(
-                  width: double.infinity,
-                  height: 100,
-                  child: ClipPath(
-                    clipper: CurvedClipper(),
-                    child: Container(
-                      color: platte.orange,
-                      child: Center(
-                        child: Text(
-                          'Cinema Screen',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: CurvedBannerContainer(
+                    width: double.infinity,
+                    height: 70,
+                    color: platte.orange,
+                    child: Center(
+                      child: Text(
+                        'Cinema Screen',
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
@@ -97,13 +88,23 @@ class CinemaSeatPage extends StatelessWidget {
                           index == 80) {
                         return SizedBox(width: 20);
                       } else {
+                        final texts = ['A1', 'A2', 'A3', 'C1', 'D5', 'E2', 'F4'];
+                        final colors = [Colors.grey, Colors.black, platte.orange,Colors.grey, Colors.grey, Colors.grey,Colors.grey,];
 
                         final effectiveIndex = index > 3 ? index - 1 : index;
                         return Container(
                           height: 40,
                           width: 40,
-                          color: Colors.grey,
-
+                          color: colors[effectiveIndex % texts.length],
+                          child: Center(
+                            child: Text(
+                              texts[effectiveIndex % texts.length],
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
                         );
                       }
                     },
@@ -114,7 +115,7 @@ class CinemaSeatPage extends StatelessWidget {
                   width: 500,
                   height: 200,
                   decoration: BoxDecoration(
-                    color: Colors.grey[100],
+                    color: Colors.white70,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),

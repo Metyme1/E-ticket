@@ -1,32 +1,62 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
+class CurvedBannerContainer extends StatelessWidget {
+  final double width;
+  final double height;
+  final Color color;
+  final Widget child;
 
-import 'package:flutter/cupertino.dart';
+  const CurvedBannerContainer({
+    required this.width,
+    required this.height,
+    required this.color,
+    required this.child,
+  });
 
-
-class CurvedClipper extends CustomClipper<Path> {
   @override
-  Path getClip(Size size) {
-    final path = Path();
-    final curveHeight = 30.0;
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      size: Size(width, height),
+      painter: CurvedBannerPainter(color),
+      child: SizedBox(
+        width: width,
+        height: height,
+        child: child,
+      ),
+    );
+  }
+}
+class CurvedBannerPainter extends CustomPainter {
+  final Color color;
 
-    path.moveTo(0, curveHeight);
+  CurvedBannerPainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color;
+    final path = Path();
+
+    final curveHeight = size.height / 4;
+
+    path.moveTo(0, size.height);
     path.quadraticBezierTo(
-      size.width / 2, 0,
-      size.width, curveHeight,
+      size.width / 2,
+      size.height - curveHeight,
+      size.width,
+      size.height,
     );
-    path.lineTo(size.width, size.height - curveHeight);
+    path.lineTo(size.width, curveHeight); // Adjusted to curve only the top
     path.quadraticBezierTo(
-      size.width / 2, size.height,
-      0, size.height - curveHeight,
+      size.width / 2,
+      0,
+      0,
+      curveHeight,
     );
-    path.lineTo(0, curveHeight); // Add this line to complete the shape
     path.close();
 
-    return path;
+    canvas.drawPath(path, paint);
   }
-
   @override
-  bool shouldReclip(CurvedClipper oldClipper) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
 }
-
-

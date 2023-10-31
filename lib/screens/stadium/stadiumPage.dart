@@ -30,7 +30,7 @@ class _FootballPageState extends State<FootballPage> {
                   size: 30.0,
                   color: platte.orange,// Set the desired size
                 ),
-                Text("  Stadium")
+                Text("  Football")
               ],
             ),
             Center(child: Text("Select Team",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)),

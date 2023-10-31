@@ -8,7 +8,7 @@ class PaymentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.grey[100], // Set the color of the Card widget
+      color: Colors.grey[200], // Set the color of the Card widget
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -17,7 +17,7 @@ class PaymentCard extends StatelessWidget {
             width: 50,
             height: 50,
           ),
-          SizedBox(height: 8),
+          SizedBox(height: 15),
 
         ],
       ),

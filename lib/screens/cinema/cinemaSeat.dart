@@ -2,7 +2,9 @@ import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/NavBar.dart';
+import '../../widget/clipper.dart';
 import '../../widget/customButton.dart';
+import 'cinemaPayment.dart';
 import 'cinemaSummary.dart';
 
 class CinemaSeatPage extends StatelessWidget {
@@ -38,28 +40,29 @@ class CinemaSeatPage extends StatelessWidget {
             child: Column(
 
               children: [
+
+
                 Container(
                   width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: platte.lightOrange,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.elliptical(200, 20),
-                      bottom: Radius.elliptical(200, -30),
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Cinema Screen',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                  height: 100,
+                  child: ClipPath(
+                    clipper: CurvedClipper(),
+                    child: Container(
+                      color: platte.orange,
+                      child: Center(
+                        child: Text(
+                          'Cinema Screen',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 70,),
+                SizedBox(height: 30,),
                 Row(
                   children: [
                     Icon(Icons.rectangle,color: Colors.black,),
@@ -192,7 +195,7 @@ class CinemaSeatPage extends StatelessWidget {
 // Navigate to the payment page
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) =>  cinemaSummary()),
+                              MaterialPageRoute(builder: (context) =>  cinemaPayment()),
                             );
                           },
                         ),

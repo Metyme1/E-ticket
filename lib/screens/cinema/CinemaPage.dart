@@ -174,20 +174,30 @@ class _CinemaPageState extends State<CinemaPage> {
               ),
             ),
 
+            SizedBox(height: 10,),
+
             Center(
               child: SizedBox(
                 width: 300,
                 height: 250.0,
                 child: Stack(
+
                   children: [
-                    Image.asset(
-                      'assets/image21.png', // Replace with your image path
-                      fit: BoxFit.cover,
+                    Positioned(
+                      top: 100,
+                      bottom: 10,
+                      left: 10,
+                      child: Image.asset(
+                        'assets/image21.png', // Replace with your image path
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Positioned(
 
                       left: 16.0,
                       right: 16.0,
+                      bottom: 16,
+
                       child: Container(
                         padding: EdgeInsets.all(16.0),
 
@@ -197,6 +207,25 @@ class _CinemaPageState extends State<CinemaPage> {
                             fontSize: 12.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+
+                      left: 16.0,
+                      right: 16.0,
+                      bottom: 140,
+
+                      child: Container(
+                        padding: EdgeInsets.all(16.0),
+
+                        child: Text(
+                          'Promo',
+                          style: TextStyle(
+                            fontSize: 18.0,
+
+                            color: Colors.black,
                           ),
                         ),
                       ),

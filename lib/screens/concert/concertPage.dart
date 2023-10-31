@@ -29,7 +29,7 @@ class ConcertPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Concert Details',
+                    'Concert 1',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -37,30 +37,52 @@ class ConcertPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 16),
-                  Text(
-                    'Date: October 30, 2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
+                  Row(children: [
+                    Icon(Icons.calendar_month,color: Colors.white,),
+                    SizedBox(width: 10,),
+                    Text("Friday, 24 Aug 2019",style: TextStyle(color: Colors.white),),
+                    SizedBox(width: 20,),
+                    Text(" 6:30 PM - 9:30PM",style: TextStyle(color: Colors.white),),
+                  ],),
                   SizedBox(height: 8),
-                  Text(
-                    'Time: 8:00 PM',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
+                  Row(
+                    children: [
+                      Icon(Icons.location_on,color: Colors.white,),
+                      SizedBox(width: 10,),
+                      Text("Daboi Concert Hall",style: TextStyle(color: Colors.white),)
+                    ],
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Location: Concert Hall',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
+                  SizedBox(height: 30,),
+                  Row(
+                    children: [
+                      Icon(Icons.music_note,color: Colors.white,),
+                      SizedBox(width: 10,),
+                      Text("India Rock",style: TextStyle(color: Colors.white),)
+                    ],
                   ),
 
+                  SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Icon(Icons.price_change_rounded,color: Colors.white,),
+                      SizedBox(width: 10,),
+                      Text("ETB 400-2000",style: TextStyle(color: Colors.white),)
+                    ],
+                  ),
+                  SizedBox(height: 50,),
+                  Container(
+                    height: 1,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                  ),
                   Expanded(
                     child: Align(
                       alignment: Alignment.bottomRight,

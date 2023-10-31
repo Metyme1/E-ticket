@@ -28,7 +28,7 @@ class concertPayment extends StatelessWidget {
             ),
             title: Center(
               child: Text(
-                'Payment Page',
+                'Payment Method',
                 style: TextStyle(
                   color: Colors.black,
                 ),

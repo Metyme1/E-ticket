@@ -233,19 +233,21 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                 ),
                 SizedBox(height: 20,),
                 Container(
-                  height: 70.0,
+                  height: 60.0,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 7,
                     itemBuilder: (context, index) {
+                      List<String> days = ['MON', 'TUE', 'WED',"THU","FRI","SAT","SUN"];
+                      List<String> dates = ['Nov 21', 'Nov 22', 'Nov 23','Nov 24','Nov 25','Nov 26','Nov 27'];
+
                       return GestureDetector(
                         onTap: () {
                           setState(() {
                             selectedIndex = index; // Update the selected index
                           });
                         },
-                        child:
-                        Container(
+                        child: Container(
                           width: 80.0,
                           margin: EdgeInsets.symmetric(horizontal: 8.0),
                           decoration: BoxDecoration(
@@ -256,21 +258,34 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                               width: 1.0,
                             ),
                           ),
-                          child: Center(
-                              child: Text(
-                                '${index + 20} Nov, \n2023',
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                dates[index],
                                 style: TextStyle(
+                                  fontSize: 12,
+                                  color: index == selectedIndex ? Colors.white : Colors.black,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                              SizedBox(height: 4.0),
+                              Text(
+                                days[index],
+                                style: TextStyle(
+                                  fontSize: 18,
                                   color: index == selectedIndex ? Colors.white : Colors.black,
                                   fontWeight: FontWeight.bold,
                                 ),
-                              )
+                              ),
+                            ],
                           ),
                         ),
                       );
                     },
                   ),
                 ),
-
+                SizedBox(height: 10,),
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Text("Select Seat",
@@ -309,38 +324,54 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                   ],
                 ),
                 SizedBox(height: 15,),
+
                 Container(
-                  height: 60.0,
+                  height: 80.0,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 3,
+                    itemCount: avaliable.length,
                     itemBuilder: (context, index) {
+                      List<String> parts = avaliable[index].split(' '); // Split the string into parts
+                      String time = parts[0];
+                      String seats = parts[1] + ' ' + parts[2]+' '+parts[3];
+
                       return GestureDetector(
                         onTap: () {
                           setState(() {
                             selected2Index = index; // Update the selected index
                           });
                         },
-                        child:
-                        Container(
+                        child: Container(
                           width: 120.0,
                           margin: EdgeInsets.symmetric(horizontal: 8.0),
                           decoration: BoxDecoration(
-                            color: index == selected2Index ? platte.orange: Colors.white,
+                            color: index == selected2Index ? platte.orange : Colors.white,
                             borderRadius: BorderRadius.circular(8.0),
                             border: Border.all(
                               color: Colors.black38,
                               width: 1.0,
                             ),
                           ),
-                          child: Center(
-                              child: Text(
-                                avaliable[index],
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                time,
                                 style: TextStyle(
+                                  fontSize: 17,
                                   color: index == selected2Index ? Colors.white : Colors.black,
                                   fontWeight: FontWeight.bold,
                                 ),
-                              )
+                              ),
+                              SizedBox(height: 4.0),
+                              Text(
+                                seats,
+                                style: TextStyle(
+                                  color: index == selected2Index ? Colors.white : Colors.black,
+                                  fontSize: 12.0,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       );

@@ -7,7 +7,14 @@ import '../../widget/paymentcard.dart';
 import 'conferenceTicket.dart';
 
 
-class PaymentPage extends StatelessWidget {
+class PaymentPage extends StatefulWidget {
+  @override
+  State<PaymentPage> createState() => _PaymentPageState();
+}
+
+class _PaymentPageState extends State<PaymentPage> {
+  String selectedSeatType = 'Select Seat Type';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,7 +32,7 @@ class PaymentPage extends StatelessWidget {
           ),
           title: Center(
             child: Text(
-              'Payment Page',
+              'Payment Method',
               style: TextStyle(
                 color: Colors.black,
               ),
@@ -98,21 +105,39 @@ class PaymentPage extends StatelessWidget {
                                               busName: 'Regular Seat',
                                               seatAvailability: '23',
                                               date: 'Jan 22/03/16',
-                                              price: '400 ETB', onTap: () {  },
+                                              price: '400 ETB',
+                                                onTap: () {
+                                                  setState(() {
+                                                    selectedSeatType = 'Regular Seat';
+                                                  });
+                                                  Navigator.of(context).pop(); // Close the dialog
+                                                },
                                             ),
                                             SizedBox(height: 20,),
                                             SeatCard (
                                               busName: 'VIP',
                                               seatAvailability: '14',
                                               date: 'Jan 22/03/16',
-                                              price: '1200 ETB', onTap: () {  },
+                                              price: '1200 ETB',
+                                              onTap: () {
+                                                setState(() {
+                                                  selectedSeatType = 'VIP';
+                                                });
+                                                Navigator.of(context).pop(); // Close the dialog
+                                              },
                                             ),
                                             SizedBox(height: 20,),
                                             SeatCard (
                                               busName: 'VVIP',
                                               seatAvailability: '15',
                                               date: 'Jan 22/03/16',
-                                              price: '1200 ETB', onTap: () {  },
+                                              price: '1200 ETB',
+                                                onTap: () {
+                                                  setState(() {
+                                                    selectedSeatType = 'VVIP';
+                                                  });
+                                                  Navigator.of(context).pop(); // Close the dialog
+                                                },
                                             ),
                                           ],
                                         ),
@@ -122,8 +147,15 @@ class PaymentPage extends StatelessWidget {
                                 ),
                               ],
                             );
-                          },
-                        );
+                          }
+                        ).then((value) {
+                          if (value != null) {
+                            setState(() {
+                              selectedSeatType = value;
+                            });
+                          }
+                        });
+
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.grey[100],
@@ -143,13 +175,14 @@ class PaymentPage extends StatelessWidget {
                         child: Container(
                           alignment: Alignment.center,
                           child: Text(
-                            'Select Seat Type',
+                            selectedSeatType,
                             style: TextStyle(
                               fontSize: 18,
                               color: Colors.grey,
                             ),
                           ),
                         ),
+
                       ),
                     ),
                   ),

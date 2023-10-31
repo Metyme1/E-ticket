@@ -21,7 +21,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
     Icons.group,
     Icons.music_note,
     Icons.movie,
-    Icons.sports_soccer,
+    Icons.stadium,
     Icons.airplanemode_active,
   ];
   Map<String, List<String>> categoryImages = {

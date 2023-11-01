@@ -47,8 +47,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
       'assets/image4.png',
     ],
     'Travel':[
-      'assets/M1.png',
-      'assets/con.png',
+    'assets/travel.jpg',
+      'assets/travel.jpg'
 
 
     ]

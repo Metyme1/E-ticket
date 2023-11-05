@@ -27,7 +27,7 @@ class SplashScreen1 extends StatelessWidget {
                         fontWeight: FontWeight.bold
                     ),
                   ),
-                  SizedBox(height: 40,),
+                  SizedBox(height: 30,),
                   Text(
                     'Booking made easier',
                     style: TextStyle(
@@ -35,7 +35,78 @@ class SplashScreen1 extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  ElevatedButton(onPressed: onPressed, child: child)
+                  SizedBox(height: 40,),
+                  ElevatedButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Choose Language'),
+                                IconButton(
+                                  icon: Icon(Icons.close),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ],
+                            ),
+                            content: Container(
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50)),
+                              height: 350,
+                              width: 350,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    height: 100, // Set the desired height
+                                    width: 250, // Set the desired width
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                        side: BorderSide(color: Colors.orange),
+                                      ),
+                                      child: ListTile(
+                                        title: Center(child: Text('Amharic')),
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 100, // Set the desired height
+                                    width: 250, // Set the desired width
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                        side: BorderSide(color: Colors.orange),
+                                      ),
+                                      child: ListTile(
+                                        title: Center(child: Text('English')),
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: Text('Select Language',style: TextStyle(color: Colors.black)),
+                    style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all(Size(300, 40)),
+                      backgroundColor: MaterialStateProperty.all(Colors.grey[350]),
+                    ),
+                  ),
                 ],
               ),
             ),

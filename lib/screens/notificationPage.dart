@@ -22,12 +22,13 @@ class notificationPage extends StatelessWidget {
             icon: Icon(Icons.notifications),
             color: Colors.black,
             onPressed: () {
-
+              Navigator.of(context).pop();
             },
           ),
         ],
         elevation: 0.0,
       ),
+      
       body: Row(
         children: [
           Icon(Icons.circle,

@@ -1,3 +1,4 @@
+import 'package:eticket2/screens/signup%20page.dart';
 import 'package:flutter/material.dart';
 import 'package:eticket2/config/platte.dart';
 import 'DiscoverPage.dart';
@@ -54,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 30),
                 Container(
-                  width: 250,
+                  width: 300,
                   child: Column(
                     children: [
                       TextField(
@@ -141,7 +142,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               child: Text(
                                 'Login',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: platte.lightOrange,fontSize: 18),
+
                               ),
                             ),
                           ),
@@ -155,11 +157,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  // Perform sign-in action here
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => signup(),
+                                    ),
+                                  );
                                 },
                                 child: Text(
                                   'SIGN UP',
-                                  style: TextStyle(color: Colors.blue),
+                                  style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ],

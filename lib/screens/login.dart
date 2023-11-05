@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return SafeArea(
       child: Scaffold(
         body: Container(
- 
+
           child: Container(
 
             child: Column(
@@ -30,9 +30,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/image9.png',
+                        'assets/logo2.png',
                         width: 100,
                       ),
+                      SizedBox(height: 10,),
                       Text(
                         'LOGIN',
                         style: TextStyle(
@@ -51,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 30),
                 Container(
                   width: 250,
                   child: Column(

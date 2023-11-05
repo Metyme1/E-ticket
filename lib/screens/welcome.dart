@@ -14,8 +14,8 @@ class WelcomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/image23.png'),
-                  Image.asset('assets/image17.png'),
+                  Image.asset('assets/logo.png'),
+
                 ],
               ),
             ),

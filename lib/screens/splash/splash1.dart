@@ -20,21 +20,22 @@ class SplashScreen1 extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Welcome to Ethio ticket',
+                    'Welcome to Mechet',
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 23,
                         color: Colors.black,
                         fontWeight: FontWeight.bold
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 40,),
                   Text(
                     'Booking made easier',
                     style: TextStyle(
                       fontSize: 12,
-                      color: Colors.black,
+                      color: Colors.grey,
                     ),
                   ),
+                  ElevatedButton(onPressed: onPressed, child: child)
                 ],
               ),
             ),

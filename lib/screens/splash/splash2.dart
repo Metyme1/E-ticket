@@ -20,20 +20,29 @@ class SplashScreen2 extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Get all your Service in one place',
+                    'Get all your Service in one',
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 23,
                         color: Colors.black,
                         fontWeight: FontWeight.bold
                     ),
 
                   ),
-                  SizedBox(height: 10,),
+                  Text(
+                    'Place',
+                    style: TextStyle(
+                        fontSize: 23,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold
+                    ),
+
+                  ),
+                  SizedBox(height: 30,),
                   Text(
                     'Every service you want come in get in and \n book it',
                     style: TextStyle(
                       fontSize: 12,
-                      color: Colors.black,
+                      color: Colors.grey,
                     ),
                   ),
                 ],

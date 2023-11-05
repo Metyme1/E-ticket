@@ -20,18 +20,19 @@ class SplashScreen3 extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Book Now',
+                    'Start Now',
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 23,
                         color: Colors.black,
                         fontWeight: FontWeight.bold
                     ),
                   ),
+                  SizedBox(height: 30,),
                   Text(
                     'Register or Login to Start',
                     style: TextStyle(
                       fontSize: 12,
-                      color: Colors.black,
+                      color: Colors.grey
 
                     ),
                   ),

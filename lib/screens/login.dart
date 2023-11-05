@@ -19,12 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/login.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
+ 
           child: Container(
 
             child: Column(

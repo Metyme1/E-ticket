@@ -32,7 +32,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Conference',
       title: 'Conference',
       description: 'Join us for an exciting conference',
-      date: 'November 10, 2023',
+      date: 'Nov 10',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -40,7 +40,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Conference',
       title: 'Conference',
       description: 'Join us for an exciting conference',
-      date: 'November 10, 2023',
+      date: 'Nov 10',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -48,7 +48,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Concert',
       title: 'Concert ',
       description: 'Experience a thrilling concert',
-      date: 'December 5, 2023',
+      date: 'Dec 10',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -56,7 +56,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Concert',
       title: 'Concert ',
       description: 'Experience a thrilling concert',
-      date: 'December 5, 2023',
+      date: 'Dec 10',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -64,7 +64,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Cinema',
       title: 'Gast Mall',
       description: 'Movies',
-      date: 'December 5, 2023',
+      date: 'Dec 5',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -72,7 +72,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Cinema',
       title: 'Gast Mall',
       description: 'Movies',
-      date: 'December 5, 2023',
+      date: 'Dec 5',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -80,7 +80,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Stadium',
       title: 'Football',
       description: 'Experience a thrilling concert',
-      date: 'December 5, 2023',
+      date: 'Dec 10',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -88,7 +88,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Stadium',
       title: 'Football ',
       description: 'Experience a thrilling concert',
-      date: 'December 5, 2023',
+      date: 'Dec 10',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -96,7 +96,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Travel',
       title: 'Gonder',
       description: 'Fly to Gonder',
-      date: 'December 5, 2023',
+      date: 'Dec 5',
       price: '100 ETB - 1000',
     ),
     EventItem(
@@ -104,7 +104,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       category: 'Travel',
       title: 'Gonder',
       description: 'Fly to Gonder',
-      date: 'December 5, 2023',
+      date: 'Dec 5',
       price: '100 ETB - 1000',
     ),
   ];
@@ -250,43 +250,60 @@ class _DiscoverPageState extends State<DiscoverPage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              eventItem.title,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
 
-                        ),
-                      );
-                    }
-                    else if (selectedCategory == 'Cinema' && eventItem.category == 'Cinema') {
-                      return GestureDetector(
-                        onTap: () {
-                          // Define the navigation logic for the cinema category
-                          Navigator.pushNamed(context, '/cinema');
-                        },
-                        child: Container(
-                          width: double.infinity,
-                          height: 200.0,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(eventItem.imagePath),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              eventItem.title,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                Text(
+                                  eventItem.title,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  eventItem.description,
+                                  style: TextStyle(
+                                    color: platte.orange,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+                                    Icon(Icons.calendar_month,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.date}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                     SizedBox(width: 100,),
+                                    Icon(Icons.price_change_rounded,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.price}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+
+                                  ],
+                                ),
+
+                              ],
                             ),
                           ),
                         ),
@@ -295,7 +312,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                     else if (selectedCategory == 'Concert' && eventItem.category == 'Concert') {
                       return GestureDetector(
                         onTap: () {
-                          // Define the navigation logic for the concert category
+                          // Define the navigation logic for the conference category
                           Navigator.pushNamed(context, '/concert');
                         },
                         child: Container(
@@ -309,23 +326,70 @@ class _DiscoverPageState extends State<DiscoverPage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              eventItem.title,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+
+                                Text(
+                                  eventItem.title,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  eventItem.description,
+                                  style: TextStyle(
+                                    color: platte.orange,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+                                    Icon(Icons.calendar_month,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.date}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    SizedBox(width: 100,),
+                                    Icon(Icons.price_change_rounded,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.price}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+
+                                  ],
+                                ),
+
+                              ],
                             ),
                           ),
                         ),
                       );
                     }
-                    else if (selectedCategory == 'Stadium' && eventItem.category == 'Stadium') {
+                    else if (selectedCategory == 'Cinema' && eventItem.category == 'Cinema') {
                       return GestureDetector(
                         onTap: () {
-                          // Define the navigation logic for the concert category
-                          Navigator.pushNamed(context, '/football');
+                          // Define the navigation logic for the conference category
+                          Navigator.pushNamed(context, '/cinema');
                         },
                         child: Container(
                           width: double.infinity,
@@ -338,22 +402,146 @@ class _DiscoverPageState extends State<DiscoverPage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              eventItem.title,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+
+                                Text(
+                                  eventItem.title,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  eventItem.description,
+                                  style: TextStyle(
+                                    color: platte.orange,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+                                    Icon(Icons.calendar_month,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.date}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    SizedBox(width: 100,),
+                                    Icon(Icons.price_change_rounded,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.price}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+
+                                  ],
+                                ),
+
+                              ],
                             ),
                           ),
                         ),
                       );
                     }
+                    else if (selectedCategory == 'Stadium' && eventItem.category == 'Stadium') {
+                      return GestureDetector(
+                        onTap: () {
+                          // Define the navigation logic for the conference category
+                          Navigator.pushNamed(context, '/Stadium');
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(eventItem.imagePath),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+
+                                Text(
+                                  eventItem.title,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  eventItem.description,
+                                  style: TextStyle(
+                                    color: platte.orange,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+                                    Icon(Icons.calendar_month,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.date}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    SizedBox(width: 100,),
+                                    Icon(Icons.price_change_rounded,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.price}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+
+                                  ],
+                                ),
+
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+
                     else if (selectedCategory == 'Travel' && eventItem.category == 'Travel') {
                       return GestureDetector(
                         onTap: () {
-                          // Define the navigation logic for the travel category
+                          // Define the navigation logic for the conference category
                           Navigator.pushNamed(context, '/travel');
                         },
                         child: Container(
@@ -367,18 +555,66 @@ class _DiscoverPageState extends State<DiscoverPage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              eventItem.title,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+
+                                Text(
+                                  eventItem.title,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  eventItem.description,
+                                  style: TextStyle(
+                                    color: platte.orange,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+                                    Icon(Icons.calendar_month,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.date}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    SizedBox(width: 100,),
+                                    Icon(Icons.price_change_rounded,color: platte.orange,),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '${eventItem.price}',
+                                      style: TextStyle(
+                                        color: platte.orange,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+
+                                  ],
+                                ),
+
+                              ],
                             ),
                           ),
                         ),
                       );
-                    } else {
+                    }
+                    else {
                       return Container();
                     }
                   },

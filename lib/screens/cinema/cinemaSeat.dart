@@ -196,7 +196,7 @@ class CinemaSeatPage extends StatelessWidget {
 // Navigate to the payment page
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) =>  cinemaPayment()),
+                              MaterialPageRoute(builder: (context) =>  cinemaSummary()),
                             );
                           },
                         ),

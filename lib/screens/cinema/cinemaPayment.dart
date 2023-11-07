@@ -1,5 +1,6 @@
 import 'package:eticket2/config/platte.dart';
 import 'package:eticket2/screens/cinema/cinemaSummary.dart';
+import 'package:eticket2/screens/cinema/cinemaTicket.dart';
 import 'package:flutter/material.dart';
 import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
@@ -164,7 +165,7 @@ class cinemaPayment extends StatelessWidget {
                                   // Navigate to the payment page
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => cinemaSummary()),
+                                    MaterialPageRoute(builder: (context) => cinemaTicket()),
                                   );
                                 },
                               ),

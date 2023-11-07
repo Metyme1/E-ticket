@@ -1,3 +1,4 @@
+import 'package:eticket2/screens/concert/concertSummary.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/NavBar.dart';
@@ -104,7 +105,7 @@ class _selectseatConcertState extends State<selectseatConcert> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => concertPayment()),
+                          MaterialPageRoute(builder: (context) => concertSummary()),
                         );
                       },
                       child: Text(

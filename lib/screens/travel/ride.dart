@@ -57,37 +57,39 @@ class RidePage extends StatelessWidget {
 
             ),
             SizedBox(height: 30,),
-            Expanded(
-              child: Container(
-                color: Colors.grey[100],
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                     children: [
-                       Icon(Icons.price_change_rounded,size: 40,color: platte.orange,),
-                       SizedBox(width: 30,),
-                       Text("ETB 290 [Estimated]")
-                     ],
-                   ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon( Icons.directions , size: 40,color: platte.orange),
-                        SizedBox(width: 130,),
-                        Text("5.6 km")
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.play_arrow_outlined,size: 40,color: platte.orange),
-                        SizedBox(width: 130,),
-                        Text("Hotel")
-                      ],
-                    ),
-                  ],
+            Container(
+              child: Expanded(
+                child: Container(
+                  color: Colors.grey[100],
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       children: [
+                         Icon(Icons.price_change_rounded,size: 40,color: platte.orange,),
+                         SizedBox(width: 30,),
+                         Text("ETB 290 [Estimated]")
+                       ],
+                     ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon( Icons.directions , size: 40,color: platte.orange),
+                          SizedBox(width: 130,),
+                          Text("5.6 km")
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.play_arrow_outlined,size: 40,color: platte.orange),
+                          SizedBox(width: 130,),
+                          Text("Hotel")
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

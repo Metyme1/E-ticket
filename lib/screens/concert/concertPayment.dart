@@ -157,7 +157,7 @@ class concertPayment extends StatelessWidget {
                                   // Navigate to the payment page
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => concertSummary()),
+                                    MaterialPageRoute(builder: (context) => concertTicket()),
                                   );
                                 },
                               ),

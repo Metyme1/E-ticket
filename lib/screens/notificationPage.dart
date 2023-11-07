@@ -1,3 +1,4 @@
+import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/NavBar.dart';
@@ -8,14 +9,16 @@ class notificationPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('notification',
-        style: TextStyle(
-          color: Colors.black
-        ),),
+        title: Text(
+          'notification',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
         backgroundColor: Colors.white,
         leading: Icon(
           Icons.arrow_back_sharp,
-              color: Colors.black,
+          color: Colors.black,
         ),
         actions: [
           IconButton(
@@ -28,19 +31,28 @@ class notificationPage extends StatelessWidget {
         ],
         elevation: 0.0,
       ),
-      
-      body: Row(
-        children: [
-          Icon(Icons.circle,
-          color: Colors.red
-            ,),
-          Text("Your Password is sucessfully changed",
-          style: TextStyle(
-            color: Colors.black,
-
-          ),)
-
-        ],
+      body: Container(
+        height: 70,
+        padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+        color: platte.lightOrange,
+        child: Row(
+          children: [
+            Icon(
+              Icons.circle,
+              color: Colors.red,
+              size: 10,
+            ),
+            SizedBox(width: 8.0),
+            Expanded(
+              child: Text(
+                "Your Password is successfully changed",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: CustomNavigationBar(
         destinations: destinations,

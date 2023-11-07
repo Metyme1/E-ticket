@@ -1,5 +1,6 @@
 
 
+import 'package:eticket2/screens/cinema/cinemaPayment.dart';
 import 'package:eticket2/screens/cinema/cinemaTicket.dart';
 import 'package:flutter/material.dart';
 
@@ -161,7 +162,7 @@ class cinemaSummary extends StatelessWidget {
 // Navigate to the payment page
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => cinemaTicket()),
+                            MaterialPageRoute(builder: (context) => cinemaPayment()),
                           );
                         },
                       ),

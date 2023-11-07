@@ -1,5 +1,6 @@
 
 
+import 'package:eticket2/screens/concert/concertPayment.dart';
 import 'package:flutter/material.dart';
 import '../../widget/NavBar.dart';
 import '../../widget/customButton.dart';
@@ -158,7 +159,7 @@ class concertSummary extends StatelessWidget {
 // Navigate to the payment page
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => concertTicket()),
+                            MaterialPageRoute(builder: (context) => concertPayment()),
                           );
                         },
                       ),

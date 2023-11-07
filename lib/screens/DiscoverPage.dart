@@ -74,7 +74,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: TextFormField(
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
@@ -93,9 +93,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    'Category',
+                    'Categories',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -104,9 +104,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: SizedBox(
-                height: 50.0,
+                height: 40.0,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: categories.length,
@@ -121,7 +121,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       },
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 8.0),
-                        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
                         decoration: BoxDecoration(
                           color: isSelected ? platte.lightOrange : platte.darkblue,
                           borderRadius: BorderRadius.circular(5.0),
@@ -131,13 +131,13 @@ class _DiscoverPageState extends State<DiscoverPage> {
                             children: [
                               Icon(
                                 iconList[index], // Use the respective icon from the iconList
-                                color: isSelected ? Colors.black : Colors.white,
+                                color: isSelected ? Colors.black : platte.lightOrange,
                               ),
                               SizedBox(width: 8.0),
                               Text(
                                 category,
                                 style: TextStyle(
-                                  color: isSelected ? Colors.black : Colors.white,
+                                  color: isSelected ? Colors.black : platte.lightOrange,
                                   fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                                 ),
                               ),
@@ -152,14 +152,14 @@ class _DiscoverPageState extends State<DiscoverPage> {
             ),
             SizedBox(height: 10,),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
                     'Popular Events',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -170,7 +170,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
            // SizedBox(height: 30,),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ListView.separated(
                   itemCount: categoryImages[selectedCategory]?.length ?? 0,
                   separatorBuilder: (context, index) => SizedBox(height: 10.0),

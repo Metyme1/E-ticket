@@ -1,6 +1,7 @@
 import 'package:eticket2/config/platte.dart';
 import 'package:flutter/material.dart';
 
+import '../Model/EventItem.dart';
 import '../widget/NavBar.dart';
 import '../widget/appBar.dart';
 
@@ -24,35 +25,89 @@ class _DiscoverPageState extends State<DiscoverPage> {
     Icons.stadium,
     Icons.airplanemode_active,
   ];
-  Map<String, List<String>> categoryImages = {
-    'Conference': [
-      'assets/c.jpg',
-      'assets/c.jpg',
 
-    ],
-    'Concert': [
-      'assets/con.png',
-      'assets/con.png',
-
-    ],
-   'Cinema':[
-     'assets/M1.png',
-     'assets/M2.png',
-     'assets/M1.png',
-   ],
-    'Stadium':[
-      'assets/image4.png',
-      'assets/image4.png',
-      'assets/image4.png',
-      'assets/image4.png',
-    ],
-    'Travel':[
-    'assets/travel.jpg',
-      'assets/travel.jpg'
-
-
-    ]
-  };
+  List<EventItem> eventItems = [
+    EventItem(
+      imagePath: 'assets/conference.jpeg',
+      category: 'Conference',
+      title: 'Conference',
+      description: 'Join us for an exciting conference',
+      date: 'November 10, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/conference.jpeg',
+      category: 'Conference',
+      title: 'Conference',
+      description: 'Join us for an exciting conference',
+      date: 'November 10, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/image3.png',
+      category: 'Concert',
+      title: 'Concert ',
+      description: 'Experience a thrilling concert',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/image3.png',
+      category: 'Concert',
+      title: 'Concert ',
+      description: 'Experience a thrilling concert',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/image24.png',
+      category: 'Cinema',
+      title: 'Gast Mall',
+      description: 'Movies',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/image24.png',
+      category: 'Cinema',
+      title: 'Gast Mall',
+      description: 'Movies',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/foot.jpeg',
+      category: 'Stadium',
+      title: 'Football',
+      description: 'Experience a thrilling concert',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/foot.jpeg',
+      category: 'Stadium',
+      title: 'Football ',
+      description: 'Experience a thrilling concert',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/travel.jpg',
+      category: 'Travel',
+      title: 'Gonder',
+      description: 'Fly to Gonder',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+    EventItem(
+      imagePath: 'assets/travel.jpg',
+      category: 'Travel',
+      title: 'Gonder',
+      description: 'Fly to Gonder',
+      date: 'December 5, 2023',
+      price: '100 ETB - 1000',
+    ),
+  ];
   String selectedCategory = '';
 
   @override
@@ -168,46 +223,169 @@ class _DiscoverPageState extends State<DiscoverPage> {
               ),
             ),
            // SizedBox(height: 30,),
+
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: ListView.separated(
-                  itemCount: categoryImages[selectedCategory]?.length ?? 0,
+                  itemCount: eventItems.length,
                   separatorBuilder: (context, index) => SizedBox(height: 10.0),
                   itemBuilder: (context, index) {
-                    final assetImagePath = categoryImages[selectedCategory]?[index];
-                    return GestureDetector(
-                      onTap: () {
-                        // Define the navigation logic based on the selected image
-                        if (selectedCategory == 'Conference') {
+                    final eventItem = eventItems[index];
+
+                    if (selectedCategory == 'Conference' && eventItem.category == 'Conference') {
+                      return GestureDetector(
+                        onTap: () {
+                          // Define the navigation logic for the conference category
                           Navigator.pushNamed(context, '/conference');
-                        } else if (selectedCategory == 'Cinema') {
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(eventItem.imagePath),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              eventItem.title,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+
+                        ),
+                      );
+                    }
+                    else if (selectedCategory == 'Cinema' && eventItem.category == 'Cinema') {
+                      return GestureDetector(
+                        onTap: () {
+                          // Define the navigation logic for the cinema category
                           Navigator.pushNamed(context, '/cinema');
-                        } else if (selectedCategory == 'Stadium') {
-                          Navigator.pushNamed(context, '/football');
-                        }
-                        else if (selectedCategory == 'Travel') {
-                          Navigator.pushNamed(context, '/travel');
-                        }
-                        else if (selectedCategory == 'Concert') {
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(eventItem.imagePath),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              eventItem.title,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    else if (selectedCategory == 'Concert' && eventItem.category == 'Concert') {
+                      return GestureDetector(
+                        onTap: () {
+                          // Define the navigation logic for the concert category
                           Navigator.pushNamed(context, '/concert');
-                        }
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: 200.0,
-                        child: assetImagePath != null
-                            ? Image.asset(
-                          assetImagePath,
-                          fit: BoxFit.fill,
-                        )
-                            : Container(),
-                      ),
-                    );
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(eventItem.imagePath),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              eventItem.title,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    else if (selectedCategory == 'Stadium' && eventItem.category == 'Stadium') {
+                      return GestureDetector(
+                        onTap: () {
+                          // Define the navigation logic for the concert category
+                          Navigator.pushNamed(context, '/football');
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(eventItem.imagePath),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              eventItem.title,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    else if (selectedCategory == 'Travel' && eventItem.category == 'Travel') {
+                      return GestureDetector(
+                        onTap: () {
+                          // Define the navigation logic for the travel category
+                          Navigator.pushNamed(context, '/travel');
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(eventItem.imagePath),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              eventItem.title,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    } else {
+                      return Container();
+                    }
                   },
                 ),
               ),
             ),
+
           ],
 
         ),

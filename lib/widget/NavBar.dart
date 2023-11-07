@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class CustomNavigationDestination {
   final IconData icon;
   final String label;
+  final String route;
 
-  CustomNavigationDestination({required this.icon, required this.label});
+  CustomNavigationDestination({required this.icon, required this.label,required this.route});
 }
 
 class CustomNavigationBar extends StatefulWidget {
@@ -72,23 +73,23 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<CustomNavigationDestination> destinations = [
     CustomNavigationDestination(
       icon: Icons.explore,
-      label: 'Explore',
+      label: 'Explore', route: '/discover',
     ),
     CustomNavigationDestination(
       icon: Icons.event,
-      label: 'Events',
+      label: 'Events', route: '',
     ),
     CustomNavigationDestination(
       icon: Icons.directions_bus,
-      label: 'Transport',
+      label: 'Transport', route:  '/travel',
     ),
     CustomNavigationDestination(
       icon: Icons.confirmation_number,
-      label: 'Tickets',
+      label: 'Tickets', route: '',
     ),
     CustomNavigationDestination(
       icon: Icons.settings,
-      label: 'Settings',
+      label: 'Settings', route: '',
     ),
   ];
 

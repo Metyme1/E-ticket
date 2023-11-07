@@ -22,7 +22,7 @@ class BusCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Container(
-        width: 400,
+        width: 350,
         child: Card(
           color: Colors.white,
           child: ListTile(

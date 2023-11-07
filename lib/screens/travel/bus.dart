@@ -8,6 +8,11 @@ import '../../widget/customButton.dart';
 import 'TravelPayment.dart';
 
 class BusBookingPage extends StatelessWidget {
+  final double latitude;
+  final double longitude;
+
+  BusBookingPage({required this.latitude, required this.longitude});
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,7 @@ class BusBookingPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Icon(
-                        Icons.emoji_transportation,
+                        Icons.bus_alert,
                         size: 48.0,
 
                       ),
@@ -85,10 +90,11 @@ class BusBookingPage extends StatelessWidget {
                 ),
                 SizedBox(height: 6.0),
                 Padding(
-                  padding: EdgeInsets.only(left: 30,right: 20,),
+                  padding: EdgeInsets.only(left: 15,right: 20,),
                   child:Row(
                     children: <Widget>[
                       SizedBox(width: 16.0),
+                      Icon(Icons.calendar_month),
                       Text("Date"),
                       SizedBox(width: 10,),
                       Expanded(
@@ -109,87 +115,85 @@ class BusBookingPage extends StatelessWidget {
                 ),
                 SizedBox(height: 10,),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10,right: 20),
+                  padding: const EdgeInsets.only(left:30,right: 20),
                   child:
                   Row(
                     children: [
-                      Text("Bus Company"),
+                      Icon(Icons.bus_alert),
+                      Text("Bus \nCompany"),
                       SizedBox(width: 10,),
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            showDialog(
+                            showModalBottomSheet(
                               context: context,
                               builder: (BuildContext context) {
-                                return Stack(
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.topLeft,
-                                      child: FractionallySizedBox(
-                                        widthFactor: 4.0,
-                                        heightFactor: 0.9,
-                                        child: AlertDialog(
-                                          backgroundColor: Colors.white,
-                                          contentPadding: EdgeInsets.all(16.0),
-                                          content: SingleChildScrollView(
-                                            child: Column(
+                                return ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(50.0),
+                                    topRight: Radius.circular(16.0),
+                                  ),
+                                  child: Container(
+                                    height: 400,
+                                    child: SingleChildScrollView(
+                                      child: Container(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      'Available Buses',
-                                                      style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight: FontWeight.bold,
-                                                      ),
-                                                    ),
-                                                    IconButton(
-                                                      icon: Icon(Icons.close),
-                                                      onPressed: () {
-                                                        Navigator.of(context).pop(); // Close the dialog
-                                                      },
-                                                    ),
-                                                  ],
-                                                ),
-                                                Align(
-                                                  alignment: Alignment.centerLeft,
-                                                  child: Text(
-                                                    'choose one',
-                                                    style: TextStyle(
-                                                      fontSize: 14,
-                                                      color: Colors.grey,
-                                                    ),
+                                                Text(
+                                                  'Available Buses',
+                                                  style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold,
                                                   ),
                                                 ),
-                                                SizedBox(height: 16),
-                                                BusCard (
-                                                  busName: 'Selam Bus',
-                                                  seatAvailability: '13',
-                                                  date: 'Date 1',
-                                                  price: '1200 ETB',
-                                                ),
-                                                SizedBox(height: 20,),
-                                                BusCard (
-                                                  busName: 'Selam Bus',
-                                                  seatAvailability: '14',
-                                                  date: 'Date 2',
-                                                  price: '1200 ETB',
-                                                ),
-                                                SizedBox(height: 20,),
-                                                BusCard (
-                                                  busName: 'Selam Bus',
-                                                  seatAvailability: '15',
-                                                  date: 'Date 3',
-                                                  price: '1200 ETB',
+                                                IconButton(
+                                                  icon: Icon(Icons.close),
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop(); // Close the bottom sheet
+                                                  },
                                                 ),
                                               ],
                                             ),
-                                          ),
+                                            Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Text(
+                                                'choose one',
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(height: 16),
+                                            BusCard(
+                                              busName: 'Selam Bus',
+                                              seatAvailability: '13',
+                                              date: 'Date 1',
+                                              price: '1200 ETB',
+                                            ),
+                                            SizedBox(height: 20,),
+                                            BusCard(
+                                              busName: 'Selam Bus',
+                                              seatAvailability: '14',
+                                              date: 'Date 2',
+                                              price: '1200 ETB',
+                                            ),
+                                            SizedBox(height: 20,),
+                                            BusCard(
+                                              busName: 'Selam Bus',
+                                              seatAvailability: '15',
+                                              date: 'Date 3',
+                                              price: '1200 ETB',
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 );
                               },
                             );
@@ -217,22 +221,31 @@ class BusBookingPage extends StatelessWidget {
                   )
                 ),
                 SizedBox(height: 5,),
-                Row(
-                  children: [
-                    Text("Passengers"),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.0),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0,right: 10),
+                  child: Row(
+                    children: [
+                      Icon(Icons.person),
+                      Text("Passengers"),
+                      Expanded(
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            contentPadding: EdgeInsets.symmetric(vertical: 8.0),
                           ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 8.0),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 SizedBox(height: 5,),
+            Divider(
+              color: Colors.grey[300], // Set the desired color
+              height: 20, // Set the desired height
+              thickness: 2, // Set the desired thickness
+            ),
                 Row(
                   children: [
 

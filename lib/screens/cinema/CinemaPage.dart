@@ -43,8 +43,8 @@ class _CinemaPageState extends State<CinemaPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+
+      return Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(kToolbarHeight),
@@ -58,185 +58,185 @@ class _CinemaPageState extends State<CinemaPage> {
             ),
           ),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
 
-            ),
-            Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: cinemaImages.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedIndex = index;
-                      });
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: selectedIndex == index ? 170 : 120,
-                            height: selectedIndex == index ? 300 : 200,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
+              ),
+              SizedBox(
+                height: 450,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: cinemaImages.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: selectedIndex == index ? 170 : 120,
+                              height: selectedIndex == index ? 250 : 200,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
 
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(
-                                selectedIndex == index ? 20.0 : 20.0,
                               ),
-                              child: Image.asset(
-                                cinemaImages[index],
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          if (selectedIndex == index) ...[
-                            SizedBox(height: 8.0),
-                            Text(
-                              movieTitles[index],
-                              style: TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                  selectedIndex == index ? 20.0 : 20.0,
+                                ),
+                                child: Image.asset(
+                                  cinemaImages[index],
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                            SizedBox(height: 4.0),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.yellow,
-                                  size: 16.0,
+                            if (selectedIndex == index) ...[
+                              SizedBox(height: 5.0),
+                              Text(
+                                movieTitles[index],
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                SizedBox(width: 4.0),
-                                Text(
-                                  movieRatings[index].toString(),
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                  ),
+                              ),
 
-                                ),
-                                SizedBox(width: 30,),
-                                Text(
-                                  movieType[index].toString(),
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    color: Colors.grey
-                                  ),
-
-                                ),
-                              ],
-
-                            ),
-                       SizedBox(height: 20,),
-                            GestureDetector(
-                              onTap: () {
-
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => MovieDetailPage()),
-                                );
-                              },
-                              child: Row(
+                              SizedBox(height: 4.0),
+                              Row(
                                 children: [
                                   Icon(
-                                    Icons.ads_click,
-                                    color: Colors.red,
-                                    size: 24.0,
+                                    Icons.star,
+                                    color: Colors.yellow,
+                                    size: 16.0,
                                   ),
-                                  SizedBox(width: 8.0),
+                                  SizedBox(width: 4.0),
                                   Text(
-                                    "Get your tickets Now",
+                                    movieRatings[index].toString(),
                                     style: TextStyle(
-                                      color: Colors.green,
+                                      fontSize: 14.0,
                                     ),
+
+                                  ),
+                                  SizedBox(width: 30,),
+                                  Text(
+                                    movieType[index].toString(),
+                                    style: TextStyle(
+                                      fontSize: 14.0,
+                                      color: Colors.grey
+                                    ),
+
                                   ),
                                 ],
+
                               ),
-                            ),
+                         SizedBox(height: 20,),
+                              GestureDetector(
+                                onTap: () {
 
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => MovieDetailPage()),
+                                  );
+                                },
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.ads_click,
+                                      color: Colors.red,
+                                      size: 24.0,
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    Text(
+                                      "Get your tickets Now",
+                                      style: TextStyle(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                  ],
+                                ),
 
+                              ),
+                            ],
                           ],
-
-                        ],
-
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-
-            SizedBox(height: 10,),
-
-            Center(
-              child: SizedBox(
-                width: 300,
-                height: 250.0,
-                child: Stack(
-
-                  children: [
-                    Positioned(
-                      top: 100,
-                      bottom: 10,
-                      left: 10,
-                      child: Image.asset(
-                        'assets/image21.png', // Replace with your image path
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Positioned(
-
-                      left: 16.0,
-                      right: 16.0,
-                      bottom: 16,
-
-                      child: Container(
-                        padding: EdgeInsets.all(16.0),
-
-                        child: Text(
-                          'Get free popcorn and drink\nwhen using gold',
-                          style: TextStyle(
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
                         ),
                       ),
-                    ),
-                    Positioned(
-
-                      left: 16.0,
-                      right: 16.0,
-                      bottom: 140,
-
-                      child: Container(
-                        padding: EdgeInsets.all(16.0),
-
-                        child: Text(
-                          'Promo',
-                          style: TextStyle(
-                            fontSize: 18.0,
-
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
-            )
+
+              Center(
+                child: SizedBox(
+                  width: 300,
+                  height: 250.0,
+                  child: Stack(
+
+                    children: [
+                      Positioned(
+                        top: 100,
+                        bottom: 10,
+                        left: 10,
+                        child: Image.asset(
+                          'assets/image21.png', // Replace with your image path
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Positioned(
+
+                        left: 16.0,
+                        right: 16.0,
+                        bottom: 16,
+
+                        child: Container(
+                          padding: EdgeInsets.all(16.0),
+
+                          child: Text(
+                            'Get free popcorn and drink\nwhen using gold',
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      Positioned(
+
+                        left: 16.0,
+                        right: 16.0,
+                        bottom: 140,
+
+                        child: Container(
+                          padding: EdgeInsets.all(16.0),
+
+                          child: Text(
+                            'Promo',
+                            style: TextStyle(
+                              fontSize: 18.0,
+
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
 
 
-          ],
+            ],
+          ),
         ),
         bottomNavigationBar: CustomNavigationBar(
           destinations: destinations,
@@ -244,7 +244,6 @@ class _CinemaPageState extends State<CinemaPage> {
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey,
         ),
-      ),
-    );
+      );
   }
 }

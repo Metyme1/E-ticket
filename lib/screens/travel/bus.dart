@@ -81,14 +81,11 @@ class _BusBookingPageState extends State<BusBookingPage> {
                         child: TextFormField(
                           controller: textField1Controller,
                           decoration: InputDecoration(
-                            hintText: placeName.isNotEmpty
-                                ? placeName
-                                : 'Place Name',
+                            hintText: placeName.isNotEmpty ? placeName : 'Place Name',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             contentPadding: EdgeInsets.symmetric(vertical: 8.0),
-
                           ),
                           onChanged: (value) {
                             setState(() {
@@ -144,6 +141,9 @@ class _BusBookingPageState extends State<BusBookingPage> {
                         child: TextFormField(
 
                           decoration: InputDecoration(
+                            hintStyle: TextStyle(
+                              color: Colors.black,
+                            ),
                             hintText: selectedDate != null
                                 ? DateFormat('dd/MM/yy').format(selectedDate!)
                                 : 'dd/MM/yy',
@@ -158,11 +158,7 @@ class _BusBookingPageState extends State<BusBookingPage> {
                               },
                             ),
                           ),
-                          // onChanged: (value) {
-                          //   setState(() {
-                          //     areFieldsFilled = isAllFieldsFilled();
-                          //   });
-                          // },
+
                         ),
                       ),
                     ],
@@ -456,17 +452,16 @@ class _BusBookingPageState extends State<BusBookingPage> {
 
     );
   }
-
   Future<void> _convertCoordinatesToPlaceName() async {
     try {
-      List<Placemark> placemarks =
-      await placemarkFromCoordinates(widget.latitude, widget.longitude);
+      List<Placemark> placemarks = await placemarkFromCoordinates(widget.latitude, widget.longitude);
 
       if (placemarks != null && placemarks.isNotEmpty) {
         Placemark placemark = placemarks[0];
 
         setState(() {
           placeName = placemark.name ?? '';
+         
         });
       }
     } catch (e) {

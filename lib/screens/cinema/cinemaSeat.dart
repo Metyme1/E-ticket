@@ -36,14 +36,14 @@ class CinemaSeatPage extends StatelessWidget {
 
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
                 Padding(
                   padding: EdgeInsets.all(12.0),
                   child: CurvedBannerContainer(
                     width: double.infinity,
-                    height: 70,
+                    height: 50,
                     color: platte.orange,
                     child: Center(
                       child: Text(
@@ -53,7 +53,7 @@ class CinemaSeatPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 30,),
+                SizedBox(height: 10,),
                 Row(
                   children: [
                     Icon(Icons.rectangle,color: Colors.black,),
@@ -121,61 +121,63 @@ class CinemaSeatPage extends StatelessWidget {
                       topRight: Radius.circular(20),
                     ),
                   ),
-                  child: Column(
+                  child: SingleChildScrollView(
+                    child: Column(
 
-                    children: [
-                      SizedBox(height: 20,),
-                      Padding(
-                        padding: const EdgeInsets.only(left:15),
-                        child: Row(
-                          children: [
-                            Icon(Icons.location_on),
-                            Text("CINEMA 1",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
-                          ],
+                      children: [
+                        SizedBox(height: 10,),
+                        Padding(
+                          padding: const EdgeInsets.only(left:15),
+                          child: Row(
+                            children: [
+                              Icon(Icons.location_on,size: 18,),
+                              Text("CINEMA 1",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20,),
-                      Padding(
-                        padding: const EdgeInsets.only(left:15),
-                        child: Row(
-                          children: [
-                            Text("Date",style: TextStyle(color: Colors.black),),
-                            SizedBox(width: 100,),
-                            Text("Hour",style: TextStyle(color: Colors.black),),
-                            SizedBox(width: 100,),
-                            Text("Seats",style: TextStyle(color: Colors.black),)
-                          ],
+                        SizedBox(height: 20,),
+                        Padding(
+                          padding: const EdgeInsets.only(left:15),
+                          child: Row(
+                            children: [
+                              Text("Date",style: TextStyle(color: Colors.black),),
+                              SizedBox(width: 100,),
+                              Text("Hour",style: TextStyle(color: Colors.black),),
+                              SizedBox(width: 100,),
+                              Text("Seats",style: TextStyle(color: Colors.black),)
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 10,),
-                      Padding(
-                        padding: const EdgeInsets.only(left:15),
-                        child: Row(
-                          children: [
-                            Text("20 Nov",style: TextStyle(color: Colors.black,fontSize: 24),),
-                            SizedBox(width: 30,),
-                            Text("15:05",style: TextStyle(color: Colors.black,fontSize: 24),),
-                            SizedBox(width: 50,),
-                            Text("G10,G11",style: TextStyle(color: Colors.black,fontSize: 24),)
-                          ],
+                        SizedBox(height: 10,),
+                        Padding(
+                          padding: const EdgeInsets.only(left:15),
+                          child: Row(
+                            children: [
+                              Text("20 Nov",style: TextStyle(color: Colors.black,fontSize: 20),),
+                              SizedBox(width: 30,),
+                              Text("15:05",style: TextStyle(color: Colors.black,fontSize: 20),),
+                              SizedBox(width: 50,),
+                              Text("G10,G11",style: TextStyle(color: Colors.black,fontSize: 20),)
+                            ],
+                          ),
                         ),
+                    SizedBox(height: 10,),
+                    Padding(
+                      padding: const EdgeInsets.only(left:15),
+                      child: Row(
+                        children: [Text("Totla Price",style: TextStyle(fontSize:16 ),)],
                       ),
-                  SizedBox(height: 10,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:15),
-                    child: Row(
-                      children: [Text("Totla Price",style: TextStyle(fontSize:16 ),)],
                     ),
-                  ),
-                      Padding(
-                        padding: const EdgeInsets.only(left:15),
-                        child: Row(
-                          children: [Text("ETB 1000",style: TextStyle(fontSize:28,color: Colors.orange ),)],
-                        ),
-                      )
+                        Padding(
+                          padding: const EdgeInsets.only(left:15),
+                          child: Row(
+                            children: [Text("ETB 1000",style: TextStyle(fontSize:24,color: Colors.orange ),)],
+                          ),
+                        )
 
-                    ],
+                      ],
 
+                    ),
                   ),
 
                 ),

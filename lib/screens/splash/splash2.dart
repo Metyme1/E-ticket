@@ -18,7 +18,7 @@ class SplashScreen2 extends StatelessWidget {
                     'assets/image10.png',
                     width: 300, // Adjust the width as needed
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   Text(
                     'Get all your Service in one',
                     style: TextStyle(
@@ -37,7 +37,7 @@ class SplashScreen2 extends StatelessWidget {
                     ),
 
                   ),
-                  SizedBox(height: 30,),
+                  SizedBox(height: 23,),
                   Text(
                     'Every service you want come in get in and \n book it',
                     style: TextStyle(

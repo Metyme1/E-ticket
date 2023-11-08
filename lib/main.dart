@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'EthiTicketify',
+      theme: ThemeData(
+        primaryColor: Colors.white, ),
       initialRoute: '/',
       routes: {
         '/': (context) => WelcomePage(),

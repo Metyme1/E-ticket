@@ -8,17 +8,19 @@ class TravelTicket extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
+
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/back.png'), // Replace with your actual background image path
+              image: AssetImage('assets/back.png'),
               fit: BoxFit.cover,
             ),
           ),
 
           child: Center(
             child: Card(
-              margin: EdgeInsets.only(left:35.0,right: 35),
+              margin: EdgeInsets.only(left:20,right: 20),
               child: Container(
+                width: double.maxFinite,
                 height: 400,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

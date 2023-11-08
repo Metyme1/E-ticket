@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class CustomNavigationDestination {
   final IconData icon;
   final String label;
-  final String route;
 
-  CustomNavigationDestination({required this.icon, required this.label,required this.route});
+
+  CustomNavigationDestination({required this.icon, required this.label});
 }
 
 class CustomNavigationBar extends StatefulWidget {
@@ -27,19 +27,37 @@ class CustomNavigationBar extends StatefulWidget {
 }
 
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
-  int _selectedIndex = 0;
+  int _selectedIndex=2;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
 
-    // Handle navigation based on the selected index
-    // ...
-  }
 
   @override
   Widget build(BuildContext context) {
+
+    void _onItemTapped(int index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+      switch (index) {
+        case 0:
+          Navigator.pushNamed(context, '/discover');
+          break;
+        case 1:
+          Navigator.pushNamed(context, '/events');
+          break;
+        case 2:
+          Navigator.pushNamed(context, '/travel');
+          break;
+        case 3:
+          Navigator.pushNamed(context, '/tickets');
+          break;
+        case 4:
+          Navigator.pushNamed(context, '/settings');
+          break;
+        default:
+          break;
+      }
+    }
     return Container(
       color: widget.backgroundColor,
       child: Row(
@@ -73,24 +91,25 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<CustomNavigationDestination> destinations = [
     CustomNavigationDestination(
       icon: Icons.explore,
-      label: 'Explore', route: '/discover',
+      label: 'Explore',
     ),
     CustomNavigationDestination(
       icon: Icons.event,
-      label: 'Events', route: '',
+      label: 'Events',
     ),
     CustomNavigationDestination(
       icon: Icons.directions_bus,
-      label: 'Transport', route:  '/travel',
+      label: 'Transport',
     ),
     CustomNavigationDestination(
       icon: Icons.confirmation_number,
-      label: 'Tickets', route: '',
+      label: 'Tickets',
     ),
     CustomNavigationDestination(
       icon: Icons.settings,
-      label: 'Settings', route: '',
+      label: 'Settings',
     ),
   ];
+
 
 

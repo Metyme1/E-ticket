@@ -6,12 +6,14 @@ class BusCard extends StatelessWidget {
   final String seatAvailability;
   final String date;
   final String price;
+  final String imageAsset;
 
-  const BusCard ({
+  const BusCard({
     required this.busName,
     required this.seatAvailability,
     required this.date,
     required this.price,
+    required this.imageAsset,
   });
 
   @override
@@ -26,11 +28,13 @@ class BusCard extends StatelessWidget {
         child: Card(
           color: Colors.white,
           child: ListTile(
-            leading: Image.asset('assets/selam.jpg'), // Add the image here
-            title: Text(busName,
+            leading: Image.asset(imageAsset), // Use the provided image asset
+            title: Text(
+              busName,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-              ),),
+              ),
+            ),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -42,14 +46,15 @@ class BusCard extends StatelessWidget {
                       TextSpan(
                         text: 'Date: ',
                         style: TextStyle(
-
                           color: Colors.grey,
                         ),
                       ),
-                      TextSpan(text: date,
-                          style: TextStyle(
-                              color: Colors.grey
-                          )),
+                      TextSpan(
+                        text: date,
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -61,11 +66,12 @@ class BusCard extends StatelessWidget {
                       TextSpan(
                         text: 'Seat left: ',
                         style: TextStyle(
-
                           color: Colors.grey,
                         ),
                       ),
-                      TextSpan(text: seatAvailability),
+                      TextSpan(
+                        text: seatAvailability,
+                      ),
                     ],
                   ),
                 ),
@@ -83,7 +89,9 @@ class BusCard extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                        TextSpan(text: price),
+                        TextSpan(
+                          text: price,
+                        ),
                       ],
                     ),
                   ),

@@ -7,17 +7,22 @@ import '../../widget/buscard.dart';
 import '../../widget/customButton.dart';
 import 'TravelPayment.dart';
 
-class BusBookingPage extends StatelessWidget {
+class BusBookingPage extends StatefulWidget {
   final double latitude;
   final double longitude;
 
   BusBookingPage({required this.latitude, required this.longitude});
 
-
   @override
+  State<BusBookingPage> createState() => _BusBookingPageState();
+}
+
+class _BusBookingPageState extends State<BusBookingPage> {
+
+
   Widget build(BuildContext context) {
 
-    
+
     return Scaffold(
 
         body: SingleChildScrollView(
@@ -127,16 +132,22 @@ class BusBookingPage extends StatelessWidget {
                           onTap: () {
                             showModalBottomSheet(
                               context: context,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(50.0),
+                                ),
+                              ),
                               builder: (BuildContext context) {
                                 return ClipRRect(
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(50.0),
-                                    topRight: Radius.circular(16.0),
+                                    topRight: Radius.circular(50.0),
                                   ),
                                   child: Container(
                                     height: 400,
                                     child: SingleChildScrollView(
                                       child: Container(
+
                                         padding: EdgeInsets.all(16.0),
                                         child: Column(
                                           children: [
@@ -173,21 +184,27 @@ class BusBookingPage extends StatelessWidget {
                                               busName: 'Selam Bus',
                                               seatAvailability: '13',
                                               date: 'Date 1',
-                                              price: '1200 ETB',
+                                              price: '1200 ETB', imageAsset: 'assets/selam.jpg',
                                             ),
                                             SizedBox(height: 20,),
                                             BusCard(
-                                              busName: 'Selam Bus',
+                                              busName: 'Gihon Bus',
                                               seatAvailability: '14',
                                               date: 'Date 2',
-                                              price: '1200 ETB',
+                                              price: '1200 ETB', imageAsset: 'assets/gihon.jpeg',
                                             ),
                                             SizedBox(height: 20,),
                                             BusCard(
-                                              busName: 'Selam Bus',
+                                              busName: 'Sky  Bus',
                                               seatAvailability: '15',
                                               date: 'Date 3',
-                                              price: '1200 ETB',
+                                              price: '1200 ETB', imageAsset: 'assets/sky.jpeg',
+                                            ),
+                                            BusCard(
+                                              busName: 'Habesha  Bus',
+                                              seatAvailability: '15',
+                                              date: 'Date 3',
+                                              price: '1200 ETB', imageAsset: 'assets/habesha.jpeg',
                                             ),
                                           ],
                                         ),
@@ -246,80 +263,82 @@ class BusBookingPage extends StatelessWidget {
               height: 20, // Set the desired height
               thickness: 2, // Set the desired thickness
             ),
-                Row(
-                  children: [
 
-                    Column(
-                      children: [
-                        Text("Select Seats(3/5)"),
-                        SizedBox(height: 30,),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: [
-                              Icon(Icons.rectangle,size: 30,color: Colors.black,),
+                 Row(
+                    children: [
 
-                              Text(" Taken Seat")
-                            ],
+                      Column(
+                        children: [
+                          Text("Select Seats(3/5)"),
+                          SizedBox(height: 30,),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.rectangle,size: 30,color: Colors.black,),
+
+                                Text(" Taken Seat")
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 5,),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: [
-                              Icon(Icons.rectangle,size: 30,color: Colors.white,),
+                          SizedBox(height: 5,),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.rectangle,size: 30,color: Colors.white,),
 
-                              Text(" avaliable seat")
-                            ],
+                                Text(" avaliable seat")
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10,),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: [
-                              Icon(Icons.rectangle,size: 30,color: platte.orange,),
+                          SizedBox(height: 10,),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.rectangle,size: 30,color: platte.orange,),
 
-                              Text(" seats you selected")
-                            ],
+                                Text(" seats you selected")
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10,),
+                          SizedBox(height: 10,),
 
-                      ],
-                    ),
-                    SizedBox(width: 10,),
+                        ],
+                      ),
+                      SizedBox(width: 10,),
             Container(
               height: 280, // Replace with your desired height
               width: 200, // Replace with your desired width
               color: Colors.grey[200], // Replace with your desired container color
               child: GridView.count(
-                crossAxisCount: 4, // Number of columns
-                crossAxisSpacing: 4.0, // Spacing between columns
-                mainAxisSpacing: 4.0,
-                childAspectRatio: 1.2, // Adjust the value to change the square size
-                children: List.generate(28, (index) {
-                  Color squareColor;
-                  if (index % 3 == 0) {
-                    squareColor = platte.orange; // Orange color for some squares
-                  } else if (index % 3 == 1) {
-                    squareColor = Colors.black; // Black color for some squares
-                  } else {
-                    squareColor = Colors.grey; // Grey color for remaining squares
-                  }
-                  return Container(
-                    color: squareColor, // Set the color based on the index
-                    margin: EdgeInsets.all(2),
+                  crossAxisCount: 4, // Number of columns
+                  crossAxisSpacing: 4.0, // Spacing between columns
+                  mainAxisSpacing: 4.0,
+                  childAspectRatio: 1.2, // Adjust the value to change the square size
+                  children: List.generate(28, (index) {
+                    Color squareColor;
+                    if (index % 3 == 0) {
+                      squareColor = platte.orange; // Orange color for some squares
+                    } else if (index % 3 == 1) {
+                      squareColor = Colors.black; // Black color for some squares
+                    } else {
+                      squareColor = Colors.grey; // Grey color for remaining squares
+                    }
+                    return Container(
+                      color: squareColor, // Set the color based on the index
+                      margin: EdgeInsets.all(2),
 
-                  );
-                }),
+                    );
+                  }),
               ),
             ),
 
 
-                  ],
-                ),
+                    ],
+                  ),
+
                 SizedBox(height: 10,),
                 Center(
                   child: Container(

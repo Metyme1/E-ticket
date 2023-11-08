@@ -465,7 +465,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       return GestureDetector(
                         onTap: () {
                           // Define the navigation logic for the conference category
-                          Navigator.pushNamed(context, '/Stadium');
+                          Navigator.pushNamed(context, '/football');
                         },
                         child: Container(
                           width: double.infinity,
@@ -602,11 +602,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                 ),
 
                                 SizedBox(height: 8.0),
-                                Row(
-                                  children: [
 
-                                  ],
-                                ),
 
                               ],
                             ),

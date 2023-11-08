@@ -283,7 +283,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         fontSize: 18.0,
                                       ),
                                     ),
-                                     SizedBox(width: 100,),
+                                    Flexible(
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(),
+                                    ),
                                     Icon(Icons.price_change_rounded,color: platte.orange,),
                                     SizedBox(width: 10,),
                                     Text(
@@ -350,8 +353,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                 SizedBox(height: 8.0),
                                 Row(
                                   children: [
-                                    Icon(Icons.calendar_month,color: platte.orange,),
-                                    SizedBox(width: 10,),
+                                    Icon(Icons.calendar_month, color: platte.orange),
+                                    SizedBox(width: 10),
                                     Text(
                                       '${eventItem.date}',
                                       style: TextStyle(
@@ -359,9 +362,12 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         fontSize: 18.0,
                                       ),
                                     ),
-                                    SizedBox(width: 100,),
-                                    Icon(Icons.price_change_rounded,color: platte.orange,),
-                                    SizedBox(width: 10,),
+                                    Flexible(
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(),
+                                    ),
+                                    Icon(Icons.price_change_rounded, color: platte.orange),
+                                    SizedBox(width: 10),
                                     Text(
                                       '${eventItem.price}',
                                       style: TextStyle(
@@ -435,7 +441,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         fontSize: 18.0,
                                       ),
                                     ),
-                                    SizedBox(width: 100,),
+                                    Flexible(
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(),
+                                    ),
                                     Icon(Icons.price_change_rounded,color: platte.orange,),
                                     SizedBox(width: 10,),
                                     Text(
@@ -511,7 +520,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         fontSize: 18.0,
                                       ),
                                     ),
-                                    SizedBox(width: 100,),
+                                    Flexible(
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(),
+                                    ),
                                     Icon(Icons.price_change_rounded,color: platte.orange,),
                                     SizedBox(width: 10,),
                                     Text(
@@ -588,7 +600,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         fontSize: 18.0,
                                       ),
                                     ),
-                                    SizedBox(width: 100,),
+                                    Flexible(
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(),
+                                    ),
                                     Icon(Icons.price_change_rounded,color: platte.orange,),
                                     SizedBox(width: 10,),
                                     Text(

@@ -144,7 +144,7 @@ class _BusBookingPageState extends State<BusBookingPage> {
                                     topRight: Radius.circular(50.0),
                                   ),
                                   child: Container(
-                                    height: 400,
+                                    height: 600,
                                     child: SingleChildScrollView(
                                       child: Container(
 

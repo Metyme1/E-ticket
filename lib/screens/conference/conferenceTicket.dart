@@ -28,7 +28,6 @@ class MyTicketPage extends StatelessWidget {
                     width: double.maxFinite,
                     height: 200,
                   ),
-
                Center(
                 child: Card(
                   margin: EdgeInsets.only(left:35.0,right: 35),
